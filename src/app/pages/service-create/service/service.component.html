@@ -1,0 +1,391 @@
+<!-- done by Shreya Khisa 2018 -->
+<section class="createService">
+  <div class="container" *ngIf="authService.user | async as user">
+
+    <div class="title">
+      Create A New Service
+    </div>
+    <form [formGroup]="serviceForm" (ngSubmit)="onSubmit(serviceForm.value)">
+      <input type="hidden" controlclass="form-" formControlName="email" id="email" [ngModel]="user.email" value="[ngModel]">
+      <input type="hidden" controlclass="form-" formControlName="uid" id="uid" [ngModel]="user.uid" value="[ngModel]">
+      <input type="hidden" controlclass="form-" formControlName="sellerName" id="sellerName" [ngModel]="user.displayName" value="[ngModel]">
+      <input type="hidden" controlclass="form-" formControlName="sellerPhoto" id="sellerPhoto" [ngModel]="user.photoURL" value="[ngModel]">
+      
+      <div class="row">
+        <div class="col-lg-2 col-sm-2 col-md-2"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="form-group">
+
+            <label for="categories">Service Category :</label>
+              <select  class="form-control" formControlName="categories" (change)="firstDropDownChanged($event)">
+                <option value="graphics">Graphics</option>
+                <option value="digital">Digital Marketing</option>
+                <option value="writing">Writing &amp; Translation</option>
+                <option value="video">Video &amp; Animation</option>
+                <option value="music">Music &amp; Audio</option>
+                <option value="programming">Programming &amp; Tech</option>
+                <option value="business">Business</option>
+                <option value="fun">Fun &amp; Lifestyle</option>
+              <!-- </select>  -->
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="form-group">
+            <label for="categoryTypes" class="central-block">Service Category Types :</label>
+           
+            <select class="form-control" formControlName="categoryTypes" 
+            (change)="secondDropDownChanged($event)" >
+              <option value="Logo Design" *ngIf="graphics">Logo Design</option>
+              <option value="Flyers &amp; Brochurs" *ngIf="graphics">Flyers &amp; Brochures</option>
+              <option value="Packaging Design"*ngIf="graphics">Packaging Design</option>
+              <option value="Book &amp; Album Covers"*ngIf="graphics">Book &amp; Album Covers</option>
+              <option value="Business Cards &amp; Stationary" *ngIf="graphics">Business Cards &amp; Stationary</option>
+             <option value="Social Media Design" *ngIf="graphics">Social Media Design</option>
+             <option value="Web &amp; Mobile Design" *ngIf="graphics">Web &amp; Mobile Design</option>
+             <option value="Presentation Design" *ngIf="graphics">Presentation Design</option>
+             <option value="Infographics" *ngIf="graphics">Infographics</option>
+             <option value="Cartoons &amp; Caricatures" *ngIf="graphics">Cartoons &amp; Caricatures</option>
+             <option value="3D &amp; 2D Models" *ngIf="graphics">3D &amp; 2D Models</option>
+             <option value="Photoshop &amp; Editing" *ngIf="graphics">Photoshop &amp; Editing</option>
+             <option value="Banner Ads" *ngIf="graphics">Banner Ads</option>
+             <option value="Vector Tracing" *ngIf="graphics">Vector Tracing</option>
+             <option value="Invitations" *ngIf="graphics">Invitations</option>
+              <option value="Tshirts &amp; Merchandise" *ngIf="graphics">Tshirts &amp; Merchandise</option>
+              <option value="SEO" *ngIf="digital">SEO</option>
+              <option value="Social Media Marketing" *ngIf="digital">Social Media Marketing</option>
+              <option value="Email Marketing" *ngIf="digital">Email Marketing</option>
+              <option value="Content Marketing" *ngIf="digital">Content Marketing</option>
+              <option value="Video Marketing" *ngIf="digital">Video Marketing</option>
+              <option value="Web Analytics" *ngIf="digital">Web Analytics</option>
+              <option value="Local Listings" *ngIf="digital">Local Listings</option>
+              <option value="Domain Research" *ngIf="digital">Domain Research</option>
+              <option value="Search &amp; Display Marketing" *ngIf="digital">Search &amp; Display Marketing</option>
+              <option value="Marketing Strategy" *ngIf="digital">Marketing Strategy</option>
+              <option value="Influencer Marketing" *ngIf="digital">Influencer Marketing</option>
+              <option value="Web Traffic" *ngIf="digital">Web Traffic</option>
+              <option value="Mobile Advertising" *ngIf="digital">Mobile Advertising</option>
+              <option value="Music Promotion" *ngIf="digital">Music Promotion</option>
+              <option value="Articles &amp; Blog Posts" *ngIf="writing">Articles &amp; Blog Posts</option>
+              <option value="Business Copywriting" *ngIf="writing">Business Copywriting</option>
+              <option value="Resumes &amp; Cover Letters" *ngIf="writing">Resumes &amp; Cover Letters</option>
+              <option value="Translation" *ngIf="writing">Translation</option>
+              <option value="Creative Writing" *ngIf="writing">Creative Writing</option>
+              <option value="ProofReading &amp; Editing" *ngIf="writing">ProofReading &amp; Editing</option>
+              <option value="Press Releases" *ngIf="writing">Press Releases</option>
+              <option value="Transciption" *ngIf="writing">Transciption</option>
+              <option value="Legal Writing" *ngIf="writing">Legal Writing</option>
+              <option value="Whiteboard &amp; Animated Explainers" *ngIf="video">Whiteboard &amp; Animated Explainers</option>
+              <option value="Promotional Videos" *ngIf="video">Promotional Videos</option>
+              <option value="Live Action Explainers" *ngIf="video">Live Action Explainers</option>
+              <option value="Short Video Ads" *ngIf="video">Short Video Ads</option>
+              <option value="Spokesperson Videos" *ngIf="video">Spokesperson Videos</option>
+              <option value="Editing &amp; Post Production" *ngIf="video">Editing &amp; Post Production</option>
+              <option value="Lyrics &amp; Music Videos" *ngIf="video">Lyrics &amp; Music Videos</option>
+              <option value="Animated Characters &amp; Modelling" *ngIf="video">Animated Characters &amp; Modelling</option>
+              <option value="Voice Over" *ngIf="music">Voice Over</option>
+              <option value="Mixing &amp; Mastering"*ngIf="music">Mixing &amp; Mastering</option>
+              <option value="Producers &amp; Composers"*ngIf="music">Producers &amp; Composers</option>
+              <option value="Singer &amp; Songwriters"*ngIf="music">Singer &amp; Songwriters</option>
+              <option value="Sound Effects"*ngIf="music">Sound Effects</option>
+              <option value="Session Musicians &amp; Singers"*ngIf="music">Session Musicians &amp; Singers</option>
+              <option value="Jingles &amp; Drops"*ngIf="music">Jingles &amp; Drops</option>
+              <option value="WordPress"*ngIf="programming">WordPress</option>
+              <option value="Web Programming"*ngIf="programming">Web Programming</option>
+              <option value="Ecommerce"*ngIf="programming">Ecommerce</option>
+              <option value="Mobile Apps &amp; Web"*ngIf="programming">Mobile Apps &amp; Web</option>
+              <option value="Website Builders &amp; CMS"*ngIf="programming">Website Builders &amp; CMS</option>
+              <option value="Desktop Applications"*ngIf="programming">Desktop Applications</option>
+              <option value="Data Analysis &amp; Reports"*ngIf="programming">Data Analysis &amp; Reports</option>
+              <option value="Convert Files"*ngIf="programming">Convert Files</option>
+              <option value="Support &amp; IT"*ngIf="programming">Support &amp; IT</option>
+              <option value="Chatbots"*ngIf="programming">Chatbots</option>
+              <option value="Databases"*ngIf="programming">Databases</option>
+              <option value="User Testing"*ngIf="programming">User Testing</option>
+              <option value="QA"*ngIf="programming">QA</option>
+              <option value="Virtual Assistant"*ngIf="business">Virtual Assistant</option>
+              <option value="Market Research"*ngIf="business">Market Research</option>
+              <option value="Business Plans"*ngIf="business">Business Plans</option>
+              <option value="Branding Services"*ngIf="business">Branding Services</option>
+              <option value="Legal Consulting"*ngIf="business">Legal Consulting</option>
+              <option value="Financial Consulting"*ngIf="business">Financial Consulting</option>
+              <option value="Business Tips"*ngIf="business">Business Tips</option>
+              <option value="Presentations"*ngIf="business">Presentations</option>
+              <option value="Career Advice"*ngIf="business">Career Advice</option>
+              <option value="Flyer Distribution"*ngIf="business">Flyer Distribution</option>
+              <option value="Online Lessions"*ngIf="fun">Online Lessions</option>
+              <option value="Arts &amp; Crafts"*ngIf="fun">Arts &amp; Crafts</option>
+               <option value="Relationship Advice"*ngIf="fun">Relationship Advice</option>
+               <option value="Health,Nutrition &amp; Fitness"*ngIf="fun">Health,Nutrition &amp; Fitness</option>
+               <option value="Astrology &amp; Readings"*ngIf="fun">Astrology &amp; Readings</option>
+               <option value="Spiritual &amp; Healing"*ngIf="fun">Spiritual &amp; Healing</option>
+               <option value="Family &amp; Genealogy"*ngIf="fun">Family &amp; Genealogy</option>
+               <option value="Collectibles"*ngIf="fun">Collectibles</option>
+               <option value="Greeting Cards &amp; Videos"*ngIf="fun">Greeting Cards &amp; Videos</option>
+               <option value="Your Message On..."*ngIf="fun">Your Message On...</option>
+               <option value="Viral Videos"*ngIf="fun">Viral Videos</option>
+               <option value="Pranks &amp; Stunts"*ngIf="fun">Pranks &amp; Stunts</option>
+               <option value="Celebrity Impersonators"*ngIf="fun">Celebrity Impersonators</option>
+               <option value="Gaming"*ngIf="fun">Gaming</option>
+               <option value="Global Culture"*ngIf="fun">Global Culture</option>
+               
+            
+          </select>
+          </div>
+        </div>
+        <input type="hidden" class="form-control" formControlName="url" id="url" [ngModel]="url" value="[ngModel]">
+
+        <div class="col-lg-2 col-sm-2 col-md-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="form-group">
+            <label for="name">Service Name :</label>
+            <input class="form-control" formControlName="name" id="name">
+
+            <div *ngIf="name.invalid && (name.dirty || name.touched)">
+
+              <div class="alert" *ngIf="name.errors.required">
+                Name is required.
+              </div>
+              <div class="alert" *ngIf="name.errors.minlength">
+                Name must be at least 4 characters long.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="form-group">
+            <label for="serviceDescription" class="central-block">Service Description :</label>
+            <textarea class="form-control" id="descriptionOne" rows="2" formControlName="serviceDescription"></textarea>
+            <div *ngIf="serviceDescription.invalid && (serviceDescription.dirty || serviceDescription.touched)">
+
+              <div class="alert" *ngIf="serviceDescription.errors.required">
+                Description is required.
+              </div>
+
+              <div class="alert" *ngIf="serviceDescription.errors.minlength">
+                Description must be at least 6 characters long.
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="form-group">
+            <label for="file">Upload Service Images</label>
+
+
+            <div class="upload-file" dropZone (hovered)="toggleHover($event)" (dropped)="startUpload($event)" [class.hovering]="isHovering">
+              <div class="file-icons">
+                <i class="fas fa-file-pdf" data-fa-transform="rotate-322" style="margin-right:12px;"></i>
+                <i class="fas fa-file-image" style="margin-bottom:5px;"></i>
+                <i class="fas fa-file" data-fa-transform="rotate-25" style="margin-left:12px;"></i>
+              </div>
+              <div class="upload-icon" draggable="true" ngClass="{{dragAreaClass}}">
+                <div class="row">
+                  <div class="col-xs-12  col-md-12  col-lg-12 ">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <div class="shadow"></div>
+                    <label class="center-block">
+                      <p>Drag and drop or
+
+                      </p>
+                    </label>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <span class="file-label">
+                choose a file…
+              </span>
+
+              <input class="form-control" formControlName="image" id="file-cta" type="file" (change)="startUpload($event.target.files)">
+
+            </div>
+            <div *ngIf="percentage | async as pct">
+              <progress class="progress is-info" [value]="pct" max="100">
+              </progress>
+              <small>{{ pct | number }}%</small>
+
+
+            </div>
+            <div *ngIf="snapshot | async as snap">
+              <small>{{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }}</small>
+              <div *ngIf="downloadURL | async as url">
+                <small class="upload-success">Successfully uploaded images.</small>
+
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Basic Package</h4>
+              <div class="card-text">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="cost"> Service Cost :</label>
+                        <input class="form-control" formControlName="basicCost" type="number">
+                      
+                      <div *ngIf="basicCost.invalid && (basicCost.dirty ||basicCost.touched)">
+                        <div class="alert" *ngIf="basicCost.errors.required">
+                          Cost is required.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="basicDeliveryTime"> Average Delivery Time :</label>
+                        <select id="basicDeliveryTime" class="form-control" formControlName="basicDeliveryTime" style="background-color:#1b1b1d;color:white;font-size:15px;">
+                          <option *ngFor="let d of times" [ngValue]="d">{{ d }}</option>
+                        </select>
+                        <div *ngIf="basicDeliveryTime.invalid && (basicDeliveryTime.dirty ||basicDeliveryTime.touched)">
+                          <div class="alert" *ngIf="basicDeliveryTime.errors.required">
+                            Delivery time is required.
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <label for="basicDescription" class="central-block">About the Package :</label>
+                      <textarea class="form-control" id="basicDescription" rows="1" formControlName="basicDescription"></textarea>
+                      <div *ngIf="basicDescription.invalid && (basicDescription.dirty ||basicDescription.touched)">
+                        <div class="alert" *ngIf="basicDescription.errors.required">
+                          Description is required.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Standard Package</h4>
+              <div class="card-text">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="standardCost"> Service Cost :
+                        <input class="form-control" formControlName="standardCost">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="standardDeliveryTime"> Average Delivery Time :
+                        <select id="standardDeliveryTime" class="form-control" formControlName="standardDeliveryTime" style="background-color:#1b1b1d;color:white;font-size:15px;">
+                          <option *ngFor="let d of times" [ngValue]="d">{{ d }}</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <label for="standardDescription" class="central-block">About the Package :</label>
+                      <textarea class="form-control" id="standardDescription" rows="1" formControlName="standardDescription"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Premium Package</h4>
+              <div class="card-text">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="premiumCost"> Service Cost :
+                        <input class="form-control" formControlName="premiumCost">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="premiumDeliveryTime"> Average Delivery Time :
+                        <select id="premiumDeliveryTime" class="form-control" formControlName="premiumDeliveryTime" style="background-color:#1b1b1d;color:white;font-size:15px;">
+                          <option *ngFor="let d of times" [ngValue]="d">{{ d }}</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <label for="premiumDescription" class="central-block">About the Package :</label>
+                      <textarea class="form-control" id="premiumDescription" rows="1" formControlName="premiumDescription"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+
+      <div class="btn-group" style="margin-top:10px">
+
+        <button type="submit" class="btn btn-primary btnsbmt" [disabled]="serviceForm.pristine || serviceForm.invalid">Create</button>
+
+      </div>
+    </form>
+  </div>
+</section>
+  <!-- done by shreya khisa 2018 -->

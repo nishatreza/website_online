@@ -1,0 +1,290 @@
+@media (min-width:320px) and (max-width:720px){
+    form {
+      width: 100%;
+    }
+    input {
+      width: 100%;
+    }
+    
+  }
+  
+  .subsribe-button{
+    background-color: #36D7AC;
+  }
+  
+
+  h1 {
+    color: black;
+  }
+  h2 {
+  }
+  .group {
+    background: white;
+    box-shadow: 0 7px 14px 0 rgba(49,49,93,0.10),
+                0 3px 6px 0 rgba(0,0,0,0.08);
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  .select-course{
+
+   
+    
+    color: #8898AA;
+    font-weight: 300;
+    height: 40px;
+    line-height: 40px;
+   margin-left: 3%;
+    display: block;
+    border-radius: 5px;
+    position: relative;
+    top: 15px;
+    width: 95%;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+  }
+
+  label {
+  
+    text-transform: capitalize;
+    
+  }
+  
+  .address{
+  
+    position: relative;
+    left: 3%;
+  }
+  .email{
+    position: relative;
+    left: -1%;
+  }
+  
+  .field {
+    background: transparent;
+    font-weight: 300;
+    border: 0;
+    color: #31325F;
+    outline: none;
+    padding-right: 10px;
+    padding-left: 10px;
+    cursor: text;
+    width: 70%;
+    height: 40px;
+    float: right;
+  }
+  
+  .field::-webkit-input-placeholder { color: #CFD7E0; }
+  .field::-moz-placeholder { color: #CFD7E0; }
+  .field:-ms-input-placeholder { color: #CFD7E0; }
+  
+  button {
+
+    display: block;
+    background: #666EE8;
+    color: white;
+    box-shadow: 0 7px 14px 0 rgba(49,49,93,0.10),
+                0 3px 6px 0 rgba(0,0,0,0.08);
+    border-radius: 4px;
+    border: 0;
+    margin-top: 28px;
+    font-size: 15px;
+    font-weight: 400;
+    width: 100%;
+    height: auto;
+
+    outline: none;
+  }
+  
+  button:focus {
+    background: #555ABF;
+  }
+  
+  button:active {
+    background: #43458B;
+  }
+  
+  .outcome {
+    float: left;
+    width: 100%;
+    padding-top: 8px;
+    min-height: 24px;
+    text-align: center;
+  }
+  
+  .success, .error {
+    display: none;
+    font-size: 13px;
+  }
+  
+  .success.visible, .error.visible {
+    display: inline;
+  }
+  
+  .error {
+    color: #E4584C;
+  }
+  
+  .success {
+    color: #666EE8;
+  }
+  
+  .success .token {
+    font-weight: 500;
+    font-size: 13px;
+  }
+  
+  .col-centered{
+      float: none;
+      margin: 0 auto;
+  }
+  
+  
+  .panel{
+  margin: 0 !important;
+  background: white !important;
+  border-color: #ddd;
+  }
+  .panel-default >.panel-heading {
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+  }
+  
+  
+  
+  .selctcourse{
+  
+    position: relative;
+    bottom: 10px;
+    
+  }
+  
+  .col-center{
+  
+    float: none;
+    margin: 0 auto;
+    padding-top: 50px;
+    
+   
+  
+  }
+  
+  
+  .StripeElement {
+    background-color: white;
+    height: 40px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
+  
+  .StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+  }
+  
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+  
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  }
+  
+  #card-element{
+  
+  width: 100%;
+  height: auto;
+  
+  }
+  button:disabled {
+    background-color: #E8721F;
+    cursor: not-allowed;
+}
+
+  #courses{
+  
+    width: 100%;
+    margin-bottom: 10px;
+  
+  
+  }
+
+  .callAction, .callInfo{
+    padding: 0 !important;
+  }
+  
+  .preMessage {
+    padding: 2%;
+    font-size: 1.2em;
+  }
+  
+  
+  h4 {
+      padding: 2%;
+  }
+p.infotext {
+   font-size: 1em;
+ }
+
+ @media (min-width:1000px) {
+  p.infotext {
+    font-size: 1.3em;
+  }
+ }
+  #programmingSummary{
+    border: 1px solid rgb(211, 209, 209);
+    min-width: 99%;
+    max-width: 99%;
+  }
+  @media (max-width: 375px){
+    
+        .callInfo h4{
+            font-size: .9em !important;
+            line-height: 1.2em;
+            }
+    }
+    
+    
+    @media (min-width: 376px) and (max-width: 400px){
+    
+        .callInfo h4{
+            font-size: .9em !important;
+            line-height: 1.2em;
+            }
+    }
+    
+    @media (min-width: 401px) and (max-width: 600px){
+    
+        .callInfo h4{
+            font-size: 1em !important;
+            line-height: 1.1em;
+            }
+    }
+    
+    @media (min-width: 601px) and (max-width: 800px){
+    
+        .callInfo h4{
+            font-size: 1.3em !important;
+            line-height: 1.3em;
+            }
+    }
+    
+    @media (min-width: 375px) and (max-width: 667px){
+        
+            .main{
+                position: relative;
+                bottom: 8px;
+                }
+        }
+  
+            
+    @media (min-width: 320px) and (max-width: 374px){
+        
+            .main{
+                position: relative;
+                bottom: 17px;
+                }
+        }

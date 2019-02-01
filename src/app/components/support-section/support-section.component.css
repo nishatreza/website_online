@@ -1,0 +1,48 @@
+.support-section{
+    text-decoration: none;
+    padding: 2%;
+    margin: 3%;
+}
+.freepik-guides{
+    text-decoration: none;
+    padding: 2%;
+    color: #333;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.text-freepik{
+    text-decoration: none;
+
+    
+}
+
+.text-freepik:hover{
+    background-color: #F5F5F5;
+    width: 100%;
+  
+}
+.freepik-lists{
+    list-style-type: none;
+    padding: 2%;
+}
+.card-footer{
+    background-color: #333333;
+
+    
+}
+
+.card-footer:hover{
+    background-color: #adaaaa;
+  
+    
+}
+.card-footer p{
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-top: 10px;
+    
+}

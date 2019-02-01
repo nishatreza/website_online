@@ -1,0 +1,101 @@
+<section class="top-portion">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="card">
+          <div class="card-block">
+
+            <div class="main">
+
+              <h3 class="sign-up-title">Sign In</h3>
+
+              <div class="row">
+
+                <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6 omb_socialButtons">
+
+
+                  <a (click)="googleSignin()" class="btn btn-lg btn-info btn-block omb_btn-google" id="google-button">
+
+                    <i class="fab fa-google-plus-g visible-xs"></i>
+                    <span class="hidden-xs">Google+</span>
+
+
+
+                  </a>
+                </div>
+                <div class="col-xs-6 col-sm-12 col-md-6 col-lg-6">
+                  <a href="#" class="btn btn-lg btn-primary btn-block" id="fb-button">
+
+                    <i class="fab fa-facebook-square visible-xs"></i>
+                    <span class="hidden-xs">Facebook</span>
+
+
+                  </a>
+
+
+                </div>
+
+
+              </div>
+              <br>
+              <div class="login-or">
+                <hr class="hr-or">
+                <span class="span-or">or</span>
+              </div>
+              <form role="form" [formGroup]="userForm" (ngSubmit)="emailSignIn()">
+                <div class="form-group">
+                  <label for="inputUsernameEmail"></label>
+                  <input type="text" class="form-control form-control-lg" id="inputUsernameEmail" placeholder="User Name or Email" name="email"
+                    formControlName="email">
+                  <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <div class="alert" *ngIf="email.errors.required">
+                      Email is required.
+                    </div>
+                    <div class="alert" *ngIf="email.errors.minlength">
+                      Email must be at least 5 characters long.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+
+                  <label for="inputPassword"></label>
+                  <show-hide-password icon="fontawesome">
+                    <input type="password" class="form-control form-control-lg" id="inputPassword" placeholder="Password" name="password" formControlName="password">
+                  </show-hide-password>
+                  <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                    <div class="alert" *ngIf="password.errors.required">
+                      Password is required.
+                    </div>
+                    <div class="alert" *ngIf="password.errors.minlength">
+                      Password must be at least 6 characters long.
+                    </div>
+                  </div>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox">
+                    <a href="" class="sign-in-tag">Keep me signed in</a>
+                  </label>
+                </div>
+
+                <button type="submit" class="btn submit-button btn-lg" [disabled]="userForm.invalid">
+                  Sign In
+                </button>
+
+                <div class="bottom-portion-main">
+                  <a [routerLink]="['/signup']" class="bottom-portion">Not a member? Sign Up</a>
+                  <p>
+                    <a href="" class="bottom-portion1">Recover my password</a>
+                  </p>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

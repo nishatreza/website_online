@@ -1,0 +1,347 @@
+
+.profile-section{
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75);
+}
+
+.card{
+   background-color:#262626; 
+   
+}
+.img-div{
+    height: 150px;
+    width:150px;
+    margin: 0 auto;
+    padding-top:30px;
+    padding-bottom: 40px;
+    
+}
+.card-img-top{
+    height: inherit;
+    width: inherit;
+    border-radius: 50%;
+}
+.card-body{
+    padding-top: 30px;
+    color: white;
+    text-align: center;
+}
+.card-body a{
+    color:thistle; 
+}
+
+.card-body a h5 {
+    color: thistle !important;
+    text-transform: none;
+    display: inline;
+    font-size:1.125em !important;
+}
+.rating-section{
+    display:flex;
+}
+.rate-icon{
+    display: flex;
+    color: #FFC100;
+    font-size: 0.625em;
+    padding-top: 0;
+    margin: 0 auto;
+}
+.rate-text{
+    margin: 0;
+    display: flex;
+    padding-left: 0;
+    text-align: left;
+    padding-right: 50px;
+}
+.rating-section h5{
+    display: inline;
+    font-size: 0.750em !important;
+    color: #E0E0E0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.rating-section h5 p {
+    display: inline;
+    font-size: 0.938em !important;
+    color: #E0E0E0; 
+    font-weight: normal;
+    text-transform: none;
+    
+}
+.contact-btn{
+padding-top: 30px;
+padding-bottom: 20px;
+margin: 0 auto;
+}
+.contact-btn button{
+    font-size:0.750em;
+    padding: 8px 25px;
+    font-weight: bold;
+    background: linear-gradient(to bottom,#30C14B,#15BA35);
+    border-color:#15BA35; 
+    
+}
+
+.contact-btn button:hover{
+    border-color: #007E20;
+}
+
+.verified-area::before{
+    content: '';
+    display: block;
+    height: 1.2px;
+    width: 250px;
+    background: #E0E0E0;
+    margin:0 auto;
+    margin-top: 12px;
+    padding-left:5px;
+    padding-right: px;
+}
+.verified-area{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+
+}
+
+.verify-left h5{
+ color:#E0E0E0;
+ text-transform: capitalize;
+ font-size:0.750em !important;
+ font-weight: bold;
+ margin-top: 20px;
+ padding-left: 25px;
+ 
+}
+.verified-list{
+    padding-left: 25px;
+}
+.verified-list ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.verified-list ul li .verify-section{
+    display: flex;
+}
+
+.verify-icon{
+    color: #9E9E9E;
+    font-size: 0.625em;
+    display: inline-block;
+    padding-left: 5px;
+}
+.verify-icon i{
+margin: 0 auto;
+}
+.verify-work{
+   margin-left: 5px;
+}
+.verify-work h4{
+    font-size: 0.750em;
+    color: #BDBDBD !important;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: none;
+    white-space: nowrap;
+}
+
+.verify-right{
+float: right;
+color:#00ACC1;
+margin-top: 0;
+overflow: hidden;
+padding-right: 20px;
+}
+
+.seller-stat::before{
+    content: '';
+    display: block;
+    height: 1.2px;
+    width: 250px;
+    background: #E0E0E0;
+    margin:0 auto;
+    margin-top: 12px;
+}
+.seller-stat{
+    font-family: Arial, Helvetica, sans-serif;
+    color: lavender;
+    
+}
+.container{
+    margin-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.stat-icon{
+    color: #9E9E9E;
+    font-size: 0.625em;
+    display: inline-block;
+}
+.stat-desc h5{
+    font-size: 0.750em;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    display: inline;
+    text-align: right;
+    text-transform: capitalize;
+}
+.stat-marker h5{
+    font-size: 0.750em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: none;
+    white-space: nowrap;
+    display: inline;
+    text-transform: capitalize;
+}
+.seller-biography::before{
+    content: '';
+    display: block;
+    height: 1.2px;
+    width: 250px;
+    background: #E0E0E0;
+    margin:0 auto;
+    margin-top: 12px;
+}
+.seller-biography{
+    font-size: 0.750em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #E0E0E0;
+   
+
+}
+.seller-biography p{
+    padding-top: 30px;
+    margin-left: 10px;
+    font-size: 0.938em;
+ 
+}
+.btn-new{
+    background: transparent;
+    color:#DCE775;
+    border: none;
+    display: block;
+
+}
+.btn-new:focus{
+    outline: none;
+}
+/* @media (min-width:768px) and (max-width:1024px){
+ .profile-section{
+    margin-left: 100px;
+    font-size: 0.750em;
+ }.img-div{
+    height: 50px;
+    width:50px;
+    margin: 0 auto;
+    padding-top:30px;
+    padding-bottom: 40px;
+    
+}
+.card-img-top{
+    height: inherit;
+    width: inherit;
+    border-radius: 50%;
+}
+.card-body a h5 {
+    font-size: 0.750em !important;
+}
+.rate-icon{
+    font-size: 0.750em;
+    padding-left: 10px;
+ 
+}
+.rate-text{
+    float: center;
+}
+.rating-section h5{
+    display: block;
+}
+.contact-btn{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.688em;
+}
+.seller-stat::before,.seller-biography::before,.verified-area::before{
+    display: none;
+}
+.verified-area{
+    padding:0;
+    font-size: 0.625em;
+    
+    
+}
+.verified-area h5{
+    padding-left: 10px;
+}
+.verified-list {
+    padding-left: 8px;
+}
+.container{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.verify-right{
+    margin: 0 auto;
+    float: none;
+}
+.stat-icon{
+font-size: 0.563em;
+padding: 0;
+}
+.stat-marker h5,.stat-desc h5{
+    font-size: 0.563em	;
+    word-wrap: break-word;
+    padding: 0;
+}
+
+}
+ */@media (min-width:300px) and (max-width:973px){
+    .package-profile-section{
+        width: 100%;
+        background-attachment: fixed;
+    }
+    .package-profile-section .container{
+        
+        /* padding: 0 40px; */
+        /* background: #262626; */
+    }.seller-stat::before,.seller-biography::before,.verified-area::before{
+        display: none;
+    }
+    
+    .rate-text h5{
+        padding-right:60px;
+    }
+    .stat-icon{
+        font-size: 0.563em;
+        }
+        .stat-marker h5,.stat-desc h5{
+            font-size: 0.563em	;
+            word-wrap: break-word;
+        }
+        .verified-area {
+            padding: 0 35px;
+            text-align: center;
+        }
+        .verified-list ul li{
+            margin: 0 auto;
+        }
+    .container{
+        width: 100%;
+    }
+.table h4,h5,p{
+    font-size: 0.625em;
+}
+.icon-class{
+    font-size: 0.625em;
+}
+}
+
+@media (max-width:740px){
+    .overflow{
+        overflow-x:scroll;
+    }
+}
+.sideBar{
+    background-color: #262626;
+}

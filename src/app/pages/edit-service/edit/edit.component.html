@@ -1,0 +1,275 @@
+<section class="createService">
+  <div class="container"  >
+
+    <div class="title">
+      Edit Service
+    </div>
+    <form [formGroup]="serviceForm" (ngSubmit)="onSubmit(serviceForm.value)">
+      <input type="hidden" class="form-control" formControlName="email" id="email">
+      <input type="hidden" class="form-control" formControlName="serviceId" id="serviceId" >
+      <input type="hidden" class="form-control" formControlName="uid" id="uid" >
+      <input type="hidden" class="form-control" formControlName="categories" id="categories" >
+      <input type="hidden" class="form-control" formControlName="categoryTypes" id="categoryTypes" >
+        <input type="hidden" class="form-control" formControlName="url" id="url" >
+
+     
+    
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="form-group">
+            <label for="name">Service Name :</label>
+            <input class="form-control" formControlName="name" id="name">
+
+            <div *ngIf="name.invalid && (name.dirty || name.touched)">
+
+              <div class="alert" *ngIf="name.errors.required">
+                Name is required.
+              </div>
+              <div class="alert" *ngIf="name.errors.minlength">
+                Name must be at least 4 characters long.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+
+      </div>
+ 
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="form-group">
+            <label for="serviceDescription" class="central-block">Service Description :</label>
+            <textarea class="form-control" id="descriptionOne" rows="2" formControlName="serviceDescription" ></textarea>
+            <div *ngIf="serviceDescription.invalid && (serviceDescription.dirty || serviceDescription.touched)">
+
+              <div class="alert" *ngIf="serviceDescription.errors.required">
+                Description is required.
+              </div>
+
+              <div class="alert" *ngIf="serviceDescription.errors.minlength">
+                Description must be at least 6 characters long.
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+
+       <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="form-group">
+            <label for="file">Upload Service Images</label>
+
+
+            <div class="upload-file" dropZone (hovered)="toggleHover($event)" (dropped)="startUpload($event)" [class.hovering]="isHovering">
+              <div class="file-icons">
+                <i class="fas fa-file-pdf" data-fa-transform="rotate-322" style="margin-right:12px;"></i>
+                <i class="fas fa-file-image" style="margin-bottom:5px;"></i>
+                <i class="fas fa-file" data-fa-transform="rotate-25" style="margin-left:12px;"></i>
+              </div>
+              <div class="upload-icon" draggable="true" ngClass="{{dragAreaClass}}">
+                <div class="row">
+                  <div class="col-xs-12  col-md-12  col-lg-12 ">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <div class="shadow"></div>
+                    <label class="center-block">
+                      <p>Drag and drop or
+
+                      </p>
+                    </label>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <span class="file-label">
+                choose a file…
+              </span>
+
+              <input class="form-control" formControlName="image" id="file-cta" type="file" (change)="startUpload($event.target.files)">
+
+            </div>
+            <div *ngIf="percentage | async as pct">
+              <progress class="progress is-info" [value]="pct" max="100">
+              </progress>
+              <small>{{ pct | number }}%</small>
+
+
+            </div>
+            <div *ngIf="snapshot | async as snap">
+              <small>{{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }}</small>
+              <div *ngIf="downloadURL | async as url">
+                <small class="upload-success">Successfully uploaded images.</small>
+
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div> 
+
+
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Basic Package</h4>
+              <div class="card-text">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="cost"> Service Cost :</label>
+                        <input class="form-control" formControlName="basicCost">
+                        <div *ngIf="basicCost.invalid && (basicCost.dirty ||basicCost.touched)">
+                          <div class="alert" *ngIf="basicCost.errors.required">
+                            Cost is required.
+                          </div>
+                        </div>
+                      
+                      
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="basicDeliveryTime"> Average Delivery Time :</label>
+                         <select id="basicDeliveryTime" class="form-control" formControlName="basicDeliveryTime" >
+                         
+                            <option value="Upto 24 Hours">Upto 24 Hours</option>
+                          <option value="Upto 3 Days">Upto 3 Days</option>
+                          <option value="Upto 7 Days">Upto 7 Days</option>
+                          <option value="Any">Any</option> 
+                         </select> 
+                    
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <label for="basicDescription" class="central-block">About the Package :</label>
+                      <textarea class="form-control" id="basicDescription" rows="1" formControlName="basicDescription"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Standard Package</h4>
+              <div class="card-text">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="standardCost"> Service Cost :
+                        <input class="form-control" formControlName="standardCost">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="standardDeliveryTime"> Average Delivery Time :</label>
+                         <select id="standardDeliveryTime" class="form-control" formControlName="standardDeliveryTime"> 
+                           <option value="Upto 24 Hours">Upto 24 Hours</option>
+                           <option value="Upto 3 Days">Upto 3 Days</option>
+                           <option value="Upto 7 Days">Upto 7 Days</option>
+                           <option value="Any">Any</option> 
+                        </select> 
+                      
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <label for="standardDescription" class="central-block">About the Package :</label>
+                      <textarea class="form-control" id="standardDescription" rows="1" formControlName="standardDescription"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Premium Package</h4>
+              <div class="card-text">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="premiumCost"> Service Cost :
+                        <input class="form-control" formControlName="premiumCost">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="premiumDeliveryTime"> Average Delivery Time :</label>
+                        <select id="premiumDeliveryTime" class="form-control" formControlName="premiumDeliveryTime"> 
+                           <option value="Upto 24 Hours">Upto 24 Hours</option>
+                          <option value="Upto 3 Days">Upto 3 Days</option>
+                          <option value="Upto 7 Days">Upto 7 Days</option>
+                          <option value="Any">Any</option> 
+                        </select> 
+                    
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <label for="premiumDescription" class="central-block">About the Package :</label>
+                      <textarea class="form-control" id="premiumDescription" rows="1" formControlName="premiumDescription"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+
+      <div class="btn-group" style="margin-top:10px">
+
+        <button type="submit" class="btn btn-primary btnsbmt"[disabled]="serviceForm.invalid" >Update</button>
+
+      </div>
+
+
+    </form>
+
+    <!-- done by shreya khisa 2018 -->
+
+
+  </div>
+</section>

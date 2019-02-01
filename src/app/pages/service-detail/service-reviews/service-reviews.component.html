@@ -1,0 +1,203 @@
+<!--done by pranto 27th august 2018-->
+<div class="Comment">
+  <div class="container">
+    <h3 class="comment-section">User Comments</h3>
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+
+        <div class="card">
+          <!--if not registered user-->
+          <div class="card-body" *ngIf="!user">
+             
+            <p class="lead">
+               Please
+              <a class="text-primary" [routerLink]="['/signin']">Log in</a> to leave a comment.
+            </p>
+          </div>
+          <!--checking if user is eligible to comment-->
+          <div class="card-body" *ngIf="authService.user | async as user">
+            <!--              <div class="CommentTop">
+                  <div class="row">
+                  <div class="col-sm-7">
+                    7 Reviews
+                    <i class="fa fa-star headericon"></i>
+                    <i class="fa fa-star headericon"></i>
+                    <i class="fa fa-star headericon"></i>
+                    <i class="fa fa-star headericon"></i>
+                    <i class="fa fa-star headericon"></i>
+                    5
+                  </div>
+                    </div> -->
+            <!--comment filter-->
+            <!--     <div class="col-sm-5">
+                      <div class="dropdown">
+                    <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Most Recent
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">Most Recent</a>
+                      <a class="dropdown-item" href="#">positive Reviews</a>
+                      <a class="dropdown-item" href="#">Negative Reviews</a>
+                    </div>
+                  </div>
+                  </div>
+                    </div> 
+                  </div>
+                  </div> -->
+            <!--ratings section-->
+            <!-- <div class="row">
+                  <div class="col-sm-4">
+                    <div class="SecondSection">
+                      Seller Communication<br>
+                      <i class="fa fa-star headericon"></i>
+                      <i class="fa fa-star headericon"></i>
+                      <i class="fa fa-star headericon"></i>
+                      <i class="fa fa-star headericon"></i>
+                      <i class="fa fa-star headericon"></i>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div  class="SecondSection">
+                      Service as Described
+                      <br>
+                      <i class="fa fa-star headericon"></i>
+                      <i class="fa fa-star headericon"></i>
+                      <i class="fa fa-star headericon"></i>
+                      <i class="fa fa-star headericon"></i>
+                      <i class="fa fa-star headericon"></i>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div  class="SecondSection">
+                      Would Recommend<br>
+                      <i class="fa fa-star headericon"></i>
+                      <i class="fa fa-star headericon"></i>
+                      <i class="fa fa-star headericon"></i>
+                      <i class="fa fa-star headericon"></i>
+                      <i class="fa fa-star headericon"></i>
+                    </div>
+                  </div>
+              </div> -->
+
+            <div class="row">
+              <!--  <div class="col-md-2 col-md-push-10">
+                  <div class="image">
+                    <img src="https://fiverr-res.cloudinary.com/t_profile_small,q_auto,f_auto/profile/photos/32184620/original/vabdpgPI.jpg" width="65" height="65">
+                  </div>
+                  
+                </div> -->
+
+              <div class="col-md-12">
+                <button (click)="enableModal()" type="button" class="btn btn-primary btnModal w-100">
+                  <i class="fas fa-plus"></i> Add a new comment
+                </button>
+              </div>
+
+              <!--user input prompt-->
+              <div *ngIf="modal" class="addNewComment">
+                <div class="addNewCommentModal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h3 class="modal-title modalTitle text-center formHeading" id="exampleModalLabel">Add a new comment</h3>
+                        <button (click)="disableModal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form [formGroup]="updateCommentForm" (ngSubmit)="onSubmit(updateCommentForm.value)">
+                          <input type="hidden" class="form-control" formControlName="serviceId" id="serviceId">
+                          <input type="hidden" class="form-control" formControlName="useremail" id="email" [ngModel]="user.email" value="[ngModel]">
+                          <input type="hidden" class="form-control" id="userDisplayName" [ngModel]="user.displayName || user.userName" value="[ngModel]"
+                            formControlName="userDisplayName">
+                          <input type="hidden" class="form-control" id="userPhoto" formControlName="userPhoto" [ngModel]="user.photoURL" value="[ngModel]">
+                          <div class="row">
+                            <div class="col-md-2 col-md-push-10">
+                              <div class="image">
+                                <img [src]="user.photoURL || 'https://ssl.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png'" width="65"
+                                  height="65">
+                              </div>
+
+                            </div>
+                            <div class="col-md-10 col-md-pull-2 NameModal form-group">
+                              <h4 class="seller-name">{{user.displayName || user.userName}}</h4>
+
+                              <textarea class="form-control" formControlName="userComment" id="comment1" rows="2" placeholder="Write a comment.."></textarea>
+
+
+                            </div>
+                          </div>
+
+                          <div class="buttons newMargin">
+                            <div>
+                              <button type="submit" class="btn btn-primary btnModal addnewMargin" [disabled]="updateCommentForm.invalid">Save</button>
+                            </div>
+                            <button (click)="disableModal()" type="button" class=" btn btn-primary btnModalClose" data-dismiss="modal" aria-label="Close">
+                              Cancel
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--if user is not eligible to comment they will be asked to login-->
+            <!-- <ng-template logInToComment>
+            
+          </ng-template> -->
+            <!--     <div *ngIf="!authService.user" style="color: white;">
+           please
+              <button [routerLink]="['/signin']" class="btn btn-primary">  sign in </button>to comment
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!--user comment show-->
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+
+        <div class="card">
+          <div class="card-body" *ngIf="commentData">
+            <div class="row comment-display" *ngFor="let comment of commentData">
+              <div class="col-md-2 col-md-push-10">
+                <div class="image">
+                  <img [src]="comment.userPhoto" width="65" height="65">
+                </div>
+              </div>
+              <div class="col-md-10 col-md-pull-2">
+                <div class="content">
+                  <a href="#" style="color: white;">{{comment.userDisplayName}}</a>
+                  <!-- <i class="fa fa-star contenticon"></i>
+                <i class="fa fa-star contenticon"></i>
+                <i class="fa fa-star contenticon"></i>
+                <i class="fa fa-star contenticon"></i>
+                <i class="fa fa-star contenticon"></i> -->
+                  <br>{{comment.userComment}}
+                  <!-- <p>27 days ago</p> -->
+
+
+
+
+                  <!--   <div class="col-xs-3 col-md-5"></div> -->
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="bottomlink">
+              <b>
+                <a href="#">Show More</a>
+              </b>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!--show more button-->
+
+    </div>
+  </div>

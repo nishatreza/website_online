@@ -1,0 +1,138 @@
+
+
+/* done by Shreya Khisa 2018 */
+
+.headerContainer{
+    background-color: #1A1A1A;
+    /* background-color:white; */
+    text-align: center;
+    font-family: 12px/120% "Open Sans","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif !important;
+     padding-top:2%; 
+     padding-bottom:30px; 
+    align-items: center;
+    font-size: 18px;
+     
+    
+    color: #555;
+    
+}
+.subheader{
+    font-family: "Open Sans","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif !important;
+}
+
+.headerContainer h1{
+    font-family: "Open Sans","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif !important;
+    font-size: 40px;
+   
+    font-weight: 600;
+    letter-spacing: -.3px;
+    text-transform: capitalize !important;
+    color: #2ccfb4;
+    text-align:center;
+
+line-height: 70%;
+}
+p{
+    color: white;
+}
+
+
+
+.button-title{
+    font-size:18px;
+   padding-top:20px;
+    
+}
+
+/* done by Shreya Khisa 2018 */
+.background-color-card{
+    /* background-color: white; */
+    background-color: #1A1A1A;
+    
+    /* width: 100%; */
+    /* padding: 5%; */
+    padding-top: 5%;
+    
+    
+
+}
+
+
+
+
+.image-card{
+    margin-top: 5%;
+    
+}
+.image-card:hover{
+    opacity: .8;
+}
+.card{
+    border: hidden;
+    /* background-color: black; */
+    background-color: #262626 !important;
+    
+margin-bottom: 6%;
+}
+.card-text{
+    color: #777;
+    font-weight: 500;
+    font-family: "Open Sans","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif !important;
+    font-size: 16px;
+text-align: center;
+    padding-top: 10px;
+    /* margin-left: 2%; */
+    
+}
+.card-attribute{
+    text-decoration: none;
+}
+.image-hover:hover{
+opacity: .6;
+background: black;
+}
+
+
+
+/* shreya css */
+/* done by Shreya Khisa 2018 */
+
+/* .listContainer{
+    background-color: white;
+    line-height: 130%;
+} */
+
+
+
+.listing h3{
+    padding: 0 20px 0px 0; 
+    font-size: 15px;
+    color: #f4f4ff;
+    position:relative;
+    
+    text-transform: capitalize !important;
+   
+}
+
+.listing li {
+ 
+    color: #777;
+    font: 12px/120% "Open Sans","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif;
+    font-size:15px;
+    padding: 0 20px 10px 0; 
+    
+} 
+
+.listing li a{
+    color: #777;
+}
+
+@media(max-width:1199px)
+{
+.listContainer{
+    display: none;
+
+}
+}
+
+/* done by Shreya khisa 2018 */

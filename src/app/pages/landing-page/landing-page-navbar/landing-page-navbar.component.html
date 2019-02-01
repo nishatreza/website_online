@@ -1,0 +1,19 @@
+<nav class="navbar navbar-toggleable-md bg-custom">
+  
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <a class="navbar-brand" [routerLink]="['/']">
+       <img src="../../../assets/images/Logo-Remaked-websiteOnline_updated.png" alt="logo" class="navbar-logo"> </a>
+        <div class="collapse navbar-collapse page-scroll" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+  
+                <li class="nav-item"> <a class="nav-link" id="navlinks" >Blog</a> </li>
+               
+                <li class="nav-item">
+                    <a class="nav-link" id="navlinks" [routerLink]="['/markets/:type']" >Marketplace</a>
+                </li>
+                <li class="nav-item"> <a class="nav-link" id="navlinks" href="#process">Process</a> </li>
+                <li class="nav-item"> <a class="nav-link" id="navlinks" href="#contact">Contact</a> </li>
+            </ul>
+         
+        </div>
+      </nav>

@@ -1,0 +1,154 @@
+.landing-service{
+    /* padding:70px auto 50px; */
+    padding-top:100px;
+    background-color: #ffffff;
+    
+    
+}
+
+.header-section{
+   padding-top:30px;
+}
+.header-section h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 25px;
+    color: #000000;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    /* //font-weight: 800; */
+}
+.sub-text p{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-size: 18px;
+   color: #000000;
+   text-align: center;
+   padding: 5px;
+}
+.service-content{
+    padding:30px 0;
+    color: black;
+    cursor: pointer;
+}
+.service-icon{
+    width: 18%;
+    height: 18%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    
+}
+.service-icon img{
+    width: 100%;
+}
+
+.icon-underline{
+    display: block;
+    height: 1.7px;
+    width: 80px;
+    background: #2196F3;
+    margin:0 auto;
+    margin-top: 12px;
+}
+.service-name{
+    padding: 10px 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.service-name h4{
+    text-align: center;
+    font-size:18px;
+    padding: 3px 0;
+    text-transform: capitalize;
+}
+.text-overlay{
+    visibility: hidden;
+}
+.text-content p{
+    color: #616161;
+    font-size: 13px;
+    text-align: center;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+.service-item:hover .icon-underline{
+    -ms-transform: scale(2.5, 0.7); /* IE 9 */
+    -webkit-transform: scale(2.5, 0.7); /* Safari */
+    transform: scale(2.5, 0.7);
+    transition: 0.5s;
+   
+}
+.service-item:hover .text-overlay{
+visibility: visible;
+
+}
+/*media query*/
+@media  (min-width: 300px) and (max-width: 767px){
+    .header-section h2{
+        font-size: 25px;
+        
+    }
+    .sub-text p{
+        font-size: 20px;
+    }
+    .service-icon{
+        width: 40%;
+        height: 40%;
+    }
+    .service-item:hover .icon-underline{
+      transform: none;
+    }
+    .service-item:hover .text-overlay{
+        display: none;
+    }
+    .service-name h4{
+        font-size: 15px;
+    }
+
+   .text-overlay
+   {
+       display: none;
+   }
+   .landing-service{
+       padding: 10px auto 10px;
+   }
+   .service-content{
+       padding: 15px 0;
+   }
+
+
+}
+@media  (min-width: 768px){
+
+.service-icon{
+    width: 32%;
+    height: 32%;
+}
+.service-icon img{
+    width: 100%;
+}
+.text-content p{
+    font-size: 15px;
+    
+}
+
+.header-section h2{
+    font-size: 30px;
+}
+.header-section p{
+    font-size: 25px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

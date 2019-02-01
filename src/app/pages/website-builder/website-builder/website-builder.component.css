@@ -1,0 +1,36 @@
+.background-theme{
+    background-color: #E9ECEF;
+}
+
+#step-title{
+    padding-top: 10% !important;
+    color: black;
+}
+
+.sample-theme{
+/* border: 1px solid red; */
+
+    
+}
+img{
+    width: 100%;
+    height: 100%;
+    background: rgb(182, 180, 180);
+    position: relative;
+}
+
+#btn-theme{
+    border: none;
+cursor: pointer;
+background-color: #FB8C00;
+position: absolute;
+top: 50%;
+left:50%;
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+transform: translate(-50%, -50%);
+
+}
+#btn-theme:hover{
+    background-color: #E65100;
+}

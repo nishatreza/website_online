@@ -1,0 +1,538 @@
+<!--done by pranto and shreya-->
+<section class="profile-middle">
+  <div class="container-fluid" *ngIf="authService.user | async as user">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-sm-12 col-xs-12">
+        <div class="card user-card">
+          <div class="card-block">
+            <div class="profile-div">
+              <a class="profile-image">
+                <img width="18%" height="auto" class="img-responsive img-thumbnail rounded-circle d-block mx-auto avatar_img example  z-depth-5"
+                  [src]="user.photoURL || 'https://ssl.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png'">
+              </a>
+            </div>
+            <a class="card-title text-center username d-block mx-auto">{{user.displayName || user.userName}}</a>
+            <div class="links text-center">
+              <a class="user-link">
+                <i class="fa fa-link"></i> {{user.email}}</a>
+            </div>
+            <div class="pro-footer footer"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-sm-12 col-xs-12">
+        <!--account data show-->
+        <div class="card account-card">
+          <div class="card-block">
+            <div class="card-header">
+              <i class="fas fa-user-circle div-icon" style="color:#9C27B0 !important"></i>
+              <h3 class="heading">Account Data</h3>
+
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">User Name:</span>{{user.displayName || user.userName}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">Email:</span>{{user.email}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="acc-footer footer"></div>
+        </div>
+        <!--personal data show-->
+        <div class="card personal-card">
+          <div class="card-block">
+            <div class="card-header">
+              <i class="fas fa-info-circle div-icon" style="color:#AED581 !important"></i>
+              <h3 class="heading">Personal Data</h3>
+            </div>
+            <div class="card-body">
+              <!--if no data-->
+              <div class="row" *ngIf="!user.extraProfileInfo">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-12 text">
+                  <p>Add personal info.</p>
+                  <div class="add-button">
+                    <button class="btn pdata-button" (click)="addProfileData()">Add Info</button>
+                  </div>
+                </div>
+              </div>
+              <!--if data exists-->
+              <div class="row" *ngIf="user.extraProfileInfo">
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">First Name:</span>{{user.extraProfileInfo.fName}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">Last Name:</span>{{user.extraProfileInfo.lName}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">Website:</span>{{user.extraProfileInfo.userWebsite || "not available"}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">Address:</span>{{user.extraProfileInfo.userAddress}}
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 col-12">
+                  <div class="add-button">
+                    <button class="btn pdata-button" (click)="editProfileData(user.extraProfileInfo)">Edit Info</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="per-footer footer"></div>
+          </div>
+        </div>
+        <!--banking data-->
+        <div class="card banking-card">
+          <div class="card-block">
+            <div class="card-header">
+              <i class="fas fa-university div-icon" style="color:#880E4F !important"></i>
+              <h3 class="heading">Banking Information</h3>
+
+            </div>
+            <div class="card-body">
+              <!--if no data-->
+              <div *ngIf="!user.bankInfo" class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-12 text">
+                  <p>Add banking information</p>
+                  <div class="add-button">
+                    <button class="btn bank-button" (click)="addBankData()">Add Info</button>
+                  </div>
+                </div>
+              </div>
+              <!--if data exist-->
+              <div class="row" *ngIf="user.bankInfo">
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">Bank Name:</span>{{user.bankInfo.bankName}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">Phone Number:</span>{{user.bankInfo.phone}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">Disrtrict:</span>{{user.bankInfo.bankDistrict}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">Division:</span>{{user.bankInfo.divisionSelect}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">Account Number:</span>{{user.bankInfo.accountNo}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">Routing Number:</span>{{user.bankInfo.routingNumber}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">First Name:</span>{{user.bankInfo.userFname}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">Last Name:</span>{{user.bankInfo.userLname}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label">Branch Address:</span>{{user.bankInfo.branchAddress}}
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 col-12 ">
+                  <div class="add-button">
+                    <button class="btn bank-button" (click)="editBankData(user.bankInfo)">Edit Info</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bank-footer footer"></div>
+          </div>
+        </div>
+        <!--social data show-->
+        <div class="card social-card">
+          <div class="card-block">
+            <div class="card-header">
+              <i class="fas fa-cubes div-icon" style="color:#00BCD4 !important"></i>
+              <h3 class="heading">Social Media Links</h3>
+
+            </div>
+            <div class="card-body">
+              <!--if no data available-->
+              <div class="row" *ngIf="!user.socialInfo">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-12 text">
+                  <p>Add social media details.</p>
+                  <div class="add-button">
+                    <button class="btn social-button" (click)="addSocialData()">Add Info</button>
+                  </div>
+                </div>
+              </div>
+              <!--if data is available-->
+              <div class="row" *ngIf="user.socialInfo">
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label gap">
+                    <i class="fab fa-google-plus-g"></i>
+                  </span>
+                  {{user.socialInfo.googlePlusLink || "not available"}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label gap">
+                    <i class="fab fa-twitter"></i>
+                  </span>
+                  {{user.socialInfo.twitterLink || "not available"}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label gap">
+                    <i class="fab fa-facebook-f"></i>
+                  </span>
+                  {{user.socialInfo.facebookLink|| "not available"}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label gap">
+                    <i class="fab fa-instagram"></i>
+                  </span>
+                  {{user.socialInfo.instagramLink || "not available"}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text" >
+                  <span class="label gap">
+                    <i class="fab fa-pinterest-p"></i>
+                  </span>
+                  {{user.socialInfo.pinterestLink || "not available"}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label gap">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  {{user.socialInfo.youtubeLink || "not available"}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label gap">
+                    <i class="fab fa-dribbble"></i>
+                  </span>
+                  {{user.socialInfo.dribbleLink || "not available"}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label gap">
+                    <i class="fab fa-behance"></i>
+                  </span>
+                  {{user.socialInfo.behanceLink || "not available"}}
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12 text">
+                  <span class="label gap">
+                    <i class="fab fa-vimeo-v"></i>
+                  </span>
+                  {{user.socialInfo.vimeoLink || "not available"}}
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 col-12">
+                  <div class="add-button">
+                    <button class="btn social-button" (click)="editSocialData(user.socialInfo)">Edit Info</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="soc-footer footer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--form for profile data-->
+  <div *ngIf="profMdl" class="profileModal" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="accountModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="accountModalLabel">Update Account Data</h5>
+          <button (click)="disableProfileModal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="accountandPersonalDataForm" (ngSubmit)="addProfileInfo(accountandPersonalDataForm.value)" class="form-inner">
+
+            <div class="row">
+              <div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12">
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="First name" formControlName="fName">
+                <div *ngIf="fName.invalid && (fName.dirty || fName.touched)">
+
+                  <div class="alert" *ngIf="fName.errors.required">
+                    First Name is required.
+                  </div>
+                  <div class="alert" *ngIf="fName.errors.minlength">
+                    First Name must be at least 3 characters long.
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12">
+
+                <input type="text" class="form-control " id="formGroupExampleInput2" placeholder="Last name" formControlName="lName">
+                <div *ngIf="lName.invalid && (lName.dirty || lName.touched)">
+
+                  <div class="alert" *ngIf="lName.errors.required">
+                    Last Name is required.
+                  </div>
+                  <div class="alert" *ngIf="lName.errors.minlength">
+                    Last Name must be at least 3 characters long.
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12">
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Website" formControlName="userWebsite">
+              </div>
+
+              <div class="form-group col-md-6 col-lg-6 col-sm-12 col-xs-12 col-12">
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Address" formControlName="userAddress">
+              </div>
+            </div>
+
+            <div class="btn-save-div pull-right">
+              <button type="submit" [disabled]="accountandPersonalDataForm.invalid" class="btn-primary submit" id="btn-save-changes">Save changes</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!--form for banking data-->
+  <div *ngIf="bankMdl" class="bankModal" tabindex="-1" role="dialog" aria-labelledby="bankModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bankModalLabel">Update Banking Details</h5>
+          <button (click)="disableBankModal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="form-inner" [formGroup]="bankInfoForm" (ngSubmit)="addBankInfo(bankInfoForm.value)">
+
+            <div class="row">
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Bank Name" formControlName="bankName">
+                <div *ngIf="bankName.invalid && (bankName.dirty || bankName.touched)">
+
+                  <div class="alert" *ngIf="bankName.errors.required">
+                    Bank Name is required.
+                  </div>
+                  <div class="alert" *ngIf="bankName.errors.minlength">
+                    Bank Name must be at least 3 characters long.
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Phone Number" formControlName="phone">
+                <div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+
+                  <div class="alert" *ngIf="phone.errors.required">
+                    Phone Number is required.
+                  </div>
+                  <div class="alert" *ngIf="phone.errors.minlength">
+                    Phone Number must be at least 5 characters long.
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Bank District" formControlName="bankDistrict">
+                <div *ngIf="bankDistrict.invalid && (bankDistrict.dirty || bankDistrict.touched)">
+
+                  <div class="alert" *ngIf="bankDistrict.errors.required">
+                    Bank District is required.
+                  </div>
+
+                </div>
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+
+                <select class="form-control select-division" id="formGroupExampleInput2" formControlName="divisionSelect">
+                  <option selected disabled>Select Division </option>
+                  <option value="Dhaka">Dhaka</option>
+                  <option value="Comilla">Comilla</option>
+                  <option value="Chittagong">Chittagong</option>
+                  <option value="Barishal">Barishal</option>
+                </select>
+                <!-- <div *ngIf="divisionSelect.pristine">
+    
+              <div class="alert" *ngIf="divisionSelect.errors.required">
+                Select one division
+              </div>
+    
+            </div> -->
+                <div *ngIf="divisionSelect.invalid && (divisionSelect.dirty || divisionSelect.touched)">
+
+                  <div class="alert" *ngIf="divisionSelect.errors.required">
+                    Select one division
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Account Number" formControlName="accountNo">
+                <div *ngIf="accountNo.invalid && (accountNo.dirty || accountNo.touched)">
+
+                  <div class="alert" *ngIf="accountNo.errors.required">
+                    Account Number is required.
+                  </div>
+                  <div class="alert" *ngIf="accountNo.errors.minlength">
+                    Account Number must be at least 5 characters long.
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Routing Number" formControlName="routingNumber">
+                <div *ngIf="routingNumber.invalid && (routingNumber.dirty || routingNumber.touched)">
+
+                  <div class="alert" *ngIf="routingNumber.errors.required">
+                    Routing Number is required.
+                  </div>
+                  <div class="alert" *ngIf="routingNumber.errors.minlength">
+                    Routing Number must be at least 5 characters long.
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="First Name" formControlName="userFname">
+                <div *ngIf="userFname.invalid && (userFname.dirty || userFname.touched)">
+
+                  <div class="alert" *ngIf="userFname.errors.required">
+                    First Name is required.
+                  </div>
+                  <div class="alert" *ngIf="userFname.errors.minlength">
+                    First Name must be at least 3 characters long.
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Last Name" formControlName="userLname">
+                <div *ngIf="userLname.invalid && (userLname.dirty || userLname.touched)">
+
+                  <div class="alert" *ngIf="userLname.errors.required">
+                    Last Name is required.
+                  </div>
+                  <div class="alert" *ngIf="userLname.errors.minlength">
+                    Last Name must be at least 3 characters long.
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 col-12">
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Branch Address" formControlName="branchAddress">
+                <div *ngIf="branchAddress.invalid && (branchAddress.dirty || branchAddress.touched)">
+
+                  <div class="alert" *ngIf="branchAddress.errors.required">
+                    Branch Address is required.
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+              <div class="btn-save-div pull-right">
+                <button type="submit" [disabled]="bankInfoForm.pristine || bankInfoForm.invalid" class="btn-primary bankSbmt submit" id="btn-save-changes">Save changes</button>
+              </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--form for social data-->
+  <div *ngIf="socialMdl" class="socialModal" tabindex="-1" role="dialog" aria-labelledby="socialMdlLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="socialMdlLabel">Add Social Media Details</h5>
+          <button (click)="disableSocialModal()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="form-inner-another" [formGroup]="socialAccountForm" (ngSubmit)="addSocialInfo(socialAccountForm.value)">
+
+
+            <div class="row">
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <span class="input-group-addon">
+                  <i class="fab fa-google-plus-g"></i>
+                </span>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="https://plus.google.com/"
+                  formControlName="googlePlusLink">
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 socially">
+                <span class="input-group-addon">
+                  <i class="fab fa-facebook-f"></i>
+                </span>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="https://www.facebook.com/"
+                  formControlName="facebookLink">
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <span class="input-group-addon">
+                  <i class="fab fa-twitter"></i>
+                </span>
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="https://twitter.com/" formControlName="twitterLink">
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 socially">
+                <span class="input-group-addon">
+                  <i class="fab fa-instagram"></i>
+                </span>
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="https://www.instagram.com/"
+                  formControlName="instagramLink">
+              </div>
+
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 socially">
+                <span class="input-group-addon">
+                  <i class="fab fa-pinterest-p"></i>
+                </span>
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="https://www.pinterest.com/"
+                  formControlName="pinterestLink">
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <span class="input-group-addon">
+                  <i class="fab fa-youtube"></i>
+                </span>
+
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="https://www.youtube.com/"
+                  formControlName="youtubeLink">
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 socially">
+                <span class="input-group-addon">
+                  <i class="fab fa-dribbble"></i>
+                </span>
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="https://dribbble.com/" formControlName="dribbleLink">
+              </div>
+
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 socially">
+                <span class="input-group-addon">
+                  <i class="fab fa-behance"></i>
+                </span>
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="https://www.behance.net/"
+                  formControlName="behanceLink">
+              </div>
+              <div class="form-group col-lg-6 col-md-6 col-sm-12 col-xs-12 socially">
+                <span class="input-group-addon">
+                  <i class="fab fa-vimeo-v"></i>
+                </span>
+
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="https://vimeo.com/" formControlName="vimeoLink">
+              </div>
+            </div>
+
+
+            <div class="btn-save-div pull-right">
+              <button type="submit" [disabled]="socialAccountForm.pristine || socialAccountForm.invalid" class="btn-primary submit" id="btn-save-changes">Save changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,107 @@
+<section class="form-section">
+
+
+<h1>User Form</h1>
+<div class="container" *ngIf="authService.user | async as user">
+    <div class="title"> 
+      
+      <div class="card">
+        <div class="card-body">
+            <div class="resp-tabs-container">
+                <div class="tab1">
+                 
+                  <div class="profile-img">
+                  <img [src]="user.photoURL || 'https://ssl.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png'"  alt=" " class="img-responsive img-fluid d-block mx-auto" id="userPhoto" />
+                  <h4>{{user.displayName}}</h4>
+                  <h4>{{user.userName}}</h4>
+                  
+                    <span>{{user.email}}</span>
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit .</p> -->
+                  </div>
+                 
+                  
+                <form action="#" method="post">
+                    <div class="info">
+                        <div class="register-form">
+              
+                          <strong class="personalText">Account data</strong>
+                      <input type="text" name="Your name" placeholder="User Name" required="" [value]="user.userName"> 
+                      <input type="email" name="Email" placeholder="email" required="" [value]="user.email">
+                    <input type="text" name="text" placeholder="Phone Number" required=""> 
+                    <input type="password" name="password" placeholder="New password" required="">
+                    <input type="text" name="website" placeholder="Website" required="">
+                
+                    
+                    <div class="styled-input">
+                      <select id="category2" required="">
+                        <option value="">Choose any*</option>
+                        <option value=""> 1</option>
+                        <option value=""> 2</option>
+                        <option value=""> 3</option>
+                        <option value=""> 4</option>
+                        <option value=""> 5</option>
+                      </select>
+                      <span></span>
+                    </div>
+              
+                   
+                   
+                      <!-- <input type="submit" name="submit" value="Book Appointment"> -->
+                    
+              
+                </div>	
+                </div>
+                <div class="info">
+                   
+                    <div class="register-form-another">
+                
+                  <div class="fields-grid">
+                    <strong class="personalText">Personal data</strong>
+                        <input type="text" name="Your name" placeholder="Name" required=""> 
+                        <input type="email" name="Email" placeholder="email" required="">
+                      <input type="text" name="text" placeholder="Phone Number" required=""> 
+                      
+                      <div class="styled-input">
+                        <h2>Sex :</h2>
+                          <input type="radio" name="gender" value="male"> Male
+                          <input type="radio" name="gender" value="female"> Female
+                      </div>
+                      
+              
+                      <div class="styled-input">
+                      <input class="date" id="datepicker" name="Text" type="text" value="MM/DD/YYYY" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'MM/DD/YYYY';}"  required="">
+                      </div>	
+                       
+                        <div class="styled-input">
+                          <textarea name="message" placeholder="About user"></textarea>
+                        </div>
+                        <input type="submit" name="submit" value="submit">
+                      
+                    </div>
+                
+                    
+                </div>							
+                    </div>
+                </form>
+                  
+    
+                              
+               
+                  <div class="clear"> </div>
+                </div>
+                
+             
+                    <!-- <div class="profile-img"></div> -->
+    
+                  <div class="clear"> </div>
+           
+            
+                </div>
+        </div>
+      </div>
+    
+      
+
+</div>
+</div>
+</section>

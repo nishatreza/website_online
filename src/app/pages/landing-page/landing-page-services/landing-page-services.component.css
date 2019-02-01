@@ -1,0 +1,66 @@
+
+   /* help support content */
+
+
+   .help-background-color{
+    background-color: white;
+    padding-bottom: 1%;
+}
+.help-content{
+
+ margin: 5% auto 10%;
+ /* max-width: 720px; */
+
+
+}
+.help-heading{
+ text-align: center;
+ font-size: 1.5rem;
+ color: #5FB0EA;
+ /* font-family: "OpenSans", Arial; */
+ font-weight: 300;
+ margin-bottom: 30px;
+ padding-top:5%;
+}
+
+@media  (min-width: 401px) and (max-width: 600px){
+ .help-heading{
+
+     font-size: 2.1rem;
+
+    }
+    .works-text{
+     font-size: 2.1rem;
+    }
+    .help-main-text{
+     font-size: 1.6rem;
+    }
+    .works-paragraph{
+     font-size: 1.6rem;
+    }
+    .urgent-paragraph{
+     font-size: 1.6rem;
+    }
+    .desc-cont{
+     font-size: 1.6rem;
+    }
+
+}
+.help-main-text{
+ /* font-family: "OpenSans", Arial;  */
+ color: black;
+}
+.desc-cont{
+ /* font-family: "OpenSans", Arial;  */
+ color: black;
+}
+.help-content .col-lg-4{
+  margin-top: 30px;
+  padding: 3%;
+}
+
+.img-icon{
+
+ width: 25%;
+ height: 25%;
+}

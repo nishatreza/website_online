@@ -1,0 +1,154 @@
+.profile-main{
+    
+        padding-bottom: 2rem;
+        background-color: #1A1A1A;
+        margin-top: 120px;
+        clear: both;
+    }
+    .profile-menu .iconTitle{
+        width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-family: "Open Sans","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif !important;
+    }
+        
+
+    
+    
+    @media only screen and (max-width : 771px) {
+        
+        /* // .profile-main{
+            
+           
+        //         margin-top: 90px;
+            
+        //     } */
+               
+               
+                }
+                @media only screen and (max-width : 991px) {
+                    
+                
+                          
+    .profile-menu li{
+        
+            flex: 1;
+    
+        
+        }    
+                           
+                            }
+    
+    .profile-menu {
+     overflow: hidden;
+     display: flex;
+    
+     border-radius: 4px;
+     box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2),0px 0px 1px 0px rgba(0,0,0,0.2);
+     color: #333;
+     font-family: "Open Sans","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif;
+     font-size: 1rem;
+     line-height: 1.5;
+    padding-top: 2%;
+    
+    }
+    
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    
+    .profile-menu li{
+    
+        /* // flex: 2; */
+        position: relative;
+        overflow: hidden;
+    word-wrap: break-word;
+    cursor: pointer;
+    }
+    
+    .profile-menu li:first-child a {
+        border-radius: 4px 0 0 4px;
+    }
+    .profile-menu li a.active {
+        color: white;
+        /* // background-color: #F2DEDE; */
+        background-color: #262626;
+        border-bottom: none;
+        border-bottom: 3px solid #ECB731;
+    }
+    
+    .profile-menu li a {
+        font-size: .7rem;
+        display: block;
+        padding: 1em;
+        text-align: center;
+        border-right: 1px solid #351f1f;
+        background-color: #000000;
+        color: #939393;
+    
+    }
+    
+    .profile-menu li a .fa-user{
+    
+        color: #009688;
+    
+    }
+    .profile-menu li a .fa-tasks{
+        
+            color: #9C27B0;
+        
+        }
+    .profile-menu li a .fa-heart{
+        
+            color: #FF5722;
+        
+        }
+        .profile-menu li a .fa-users{
+            
+                color: #880E4F;
+            
+            }
+            .profile-menu li a .fa-upload{
+                
+                    color: #00BCD4;
+                
+                }
+                .profile-menu li a .fa-archive{
+                    
+                        color: #01579B;
+                    
+                    }
+                    .profile-menu li a .fa-life-ring{
+                        
+                            color: #4CAF50;
+                        
+                        }
+    
+    
+    
+    
+    a {
+        position: relative;
+        text-decoration: none;
+    
+    }
+    
+    .profile-menu li a:hover {
+        /* // color: rgb(60, 65, 141); */
+        color: white;
+    }
+    
+    
+    @media only screen and (max-width : 991px) {
+        
+            #profile-menu li a span{
+          
+         display: none;
+            }
+               
+               
+                }
+    

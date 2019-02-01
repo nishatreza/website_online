@@ -1,0 +1,23 @@
+.support-main{
+    margin: 5%;
+    padding: 1%;
+    background-color: #F7F7F7;
+}
+.card-text{
+    text-align: center;
+    color: #333;
+    font-family: "Open Sans","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+}
+.support-button{
+    padding: 1%;
+    margin: 1%;
+    color: #fff !important;
+    text-align: center;
+    background-color: #286ebb;
+    cursor: pointer;
+    font-weight: bold;
+ 
+    
+}

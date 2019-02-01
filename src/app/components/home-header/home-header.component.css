@@ -1,0 +1,223 @@
+
+
+/*home-header*/
+
+.home-header {
+
+
+
+ background-image:linear-gradient(to right top, #1c2926, #2e2525d3), url('http://geekwebdesigns.com/wp-content/uploads/2016/08/Watch-Your-Website-Visitors.jpg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: top;
+
+height: 95vh;
+/* position: relative; */
+overflow: hidden;
+}
+.head-wrap{
+    width: 100%;
+   
+   /* position: absolute;
+   top: 2%;
+   left: 50%;
+   transform: translateX(-50%); */
+   }
+@media (min-width: 1200px) {
+    .home-header{
+        height: 30vh;
+    }
+ }
+.get-started{
+    color: white;
+    font-weight: bolder;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: auto;
+    text-shadow: 2px 2px 2px rgba(2, 2, 2, 1);
+    padding-bottom: 3%;
+}
+
+
+
+
+
+
+.home-header .headertext {
+   margin: auto;
+   text-shadow: 2px 2px 2px rgba(2, 2, 2, 1);
+
+
+
+}
+.home-header .paragraphtext .fa{
+    padding-right: .2em;
+  /* display: inline-block;
+  float: left; */
+
+}
+
+
+
+.home-header h1 {
+   
+  
+  
+   color: white;
+   font-weight: bolder;
+   font-size: 4rem;
+   text-transform: uppercase;
+   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+   font-weight: 400;
+   line-height: 1.2;
+   margin: auto;
+}
+
+
+.home-header hr {
+   max-width: 50px;
+   border-width: 3px;
+   border-color: #009688;
+}
+
+.home-header .paragraphtext {
+   margin: auto;
+
+}
+
+.home-header .paragraphtext .paragraph1 {
+   font-size: 1.6em;
+   font-weight: 300;
+   color: #ECEFF1;
+   text-align: center;
+   text-shadow: 2px 2px 2px rgba(2, 2, 2, 1);
+}
+
+.paragraph-top{
+    font-size: 2em;
+    font-weight: 300;
+    color: #ECEFF1;
+    text-align: center;
+    text-shadow: 2px 2px 2px rgba(2, 2, 2, 1);
+   padding-top: 1%;
+   
+
+
+}
+
+.home-header .paragraphtext .btn-find {
+   background-color: #f05f40;
+   border-color: #f05f40;
+   font-weight: 700;
+   text-transform: uppercase;
+   border: none;
+   border-radius: 300px;
+   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+   display: inline-block;
+   white-space: nowrap;
+   color: #fff;
+   padding: 1rem 2rem;
+}
+
+.home-header .paragraphtext .btn-find:hover {
+   background-color: #BF360C;
+   border-color: #BF360C;
+   transition: all 0.3s ease;
+}
+
+#btn-facebook{
+    background-color: #3B5998;
+   border-color: #3B5998;
+   font-size: 1em;
+   color: white;
+   /* width: 40%; */
+cursor: pointer;
+
+padding: 10px 15px;
+display: inline-block;
+margin: 5px 2px;
+min-width: 200px;
+text-decoration: none;
+border-radius: 5px;
+}
+
+
+
+#btn-facebook:hover{
+box-shadow: 0px 2px 2px black;
+
+
+}
+
+#btn-google{
+    background-color: #DD4B39;
+    border-color: #DD4B39;
+    font-size: 1em;
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+    /* width: 40%; */
+cursor: pointer;
+margin: 5px 2px;
+min-width: 200px;
+text-decoration: none;
+border-radius: 5px;
+
+}
+#btn-google:hover{
+    box-shadow: 0px 2px 2px black;
+}
+.signin-class{
+    text-decoration: none;
+    color: white;
+}
+
+/*headertext*/
+
+@media (max-width: 768px) {
+    /* #btn-facebook,#btn-google {
+       width: 100%;
+     margin-bottom: .3em;
+    } */
+ }
+ @media (max-width: 530px) {
+.or{
+display: none;
+}
+ }
+
+
+
+@media (max-width: 320px) {
+   .home-header h1 {
+       font-size: 1.6em;
+   }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+   .home-header h1 {
+    font-size: 2.1em;
+   }
+}
+
+@media (min-width: 375px) and (max-width: 667px) {
+   .home-header h1 {
+    font-size: 2.1em;
+   }
+}
+
+@media (min-width: 668px) and (max-width: 767px) {
+   .home-header h1 {
+       font-size: 2.1em;
+   }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+   .home-header h1 {
+       font-size: 2.3em;
+   }
+}
+

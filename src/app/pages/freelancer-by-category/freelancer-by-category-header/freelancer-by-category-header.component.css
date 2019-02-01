@@ -1,0 +1,23 @@
+.LogoDesignHeader{
+    line-height: 1.2;
+    padding:2% 4%;
+    text-align: center;
+    font-family: "Open Sans","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif !important;
+}
+.LogoDesignTitle{
+    color: #2CCFB4;
+    font-size: 32px;
+    line-height: 50px;
+    font-weight: bold;
+}
+.LogoDesignContent{
+    color: white;
+    line-height: 30px;
+    font-size: 18px;
+}
+.LogoDesignContent a:hover{
+    color: inherit;
+}
+/* hr{
+    border-color:#3f3e3e;
+} */

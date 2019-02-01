@@ -1,0 +1,154 @@
+
+.background{
+
+    background-color: rgba(0,0,0,0.3);
+    padding: 5% 10%;
+    background-image: linear-gradient(to top,rgba(0, 0, 0, 0.856),#020101d3), url('../..//..//assets/images/bg-top.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    /* opacity: 0.2; */
+ 
+}
+
+.headertext{
+    color: white !important;
+   
+}
+.mainContainer{
+    margin-top: 98px;
+}
+
+/* .premium-banner {
+    
+    
+      
+        position: relative;
+        top: 0 !important;
+    
+     
+   
+        background: #4D4D4D;
+        color: white;
+        font-family: 'Open Sans',sans-serif;
+    }
+    
+    .premium-banner .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.2;
+        width: 100%;
+        height: 100%;
+        background: url('../..//..//assets/images/bg-top.png') center 410px;
+    }
+    
+    .premium-banner .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.3);
+        background-image: linear-gradient(to top,rgba(0,0,0,0.3),transparent);
+    
+    
+    
+    }
+    
+    .container h1{
+        padding-top: 3%;
+        font-size: 2rem;
+        text-shadow: 2px 2px 2px rgba(2, 2, 2, 1);
+    }
+    
+    .container{
+    padding-top: .5%;
+   
+    
+    
+    }
+    
+    
+    .container p {
+    
+   
+        font-size: 2rem;
+     
+    
+    
+    }
+    
+    
+    .fp-selection, .fp-premium {
+        position: relative;
+        display: inline-block;
+        color: white;
+        font-weight: bold;
+        font-style: normal;
+        text-align: left;
+        box-sizing: content-box;
+    }
+    
+    .fp-premium {
+        color: #F90;
+    }
+    
+    .premium-banner .container .btn {
+    
+        margin: 0 auto;
+        padding: 0.6em 0.6em;
+    
+        border-radius: 8px;
+        background-color: #286ebb;
+        color: #fff !important;
+        font-size: 1.8rem;
+        font-weight: bold !important;
+        cursor: pointer;
+    
+        vertical-align: middle;
+    
+    }
+    
+    
+    
+    .premium-banner .container .btn:hover{
+        background-color: #01579B;
+    }
+    
+    
+    @media only screen and (max-width : 767px) {
+        
+               .container p{
+                  font-size: 1.6rem;
+               } 
+    
+               .premium-banner .container .btn{
+                font-size: 1.5rem;
+                padding: 0.4em 0.4em;
+               }
+               
+                }
+    
+                @media only screen and (max-width : 418px) {
+                    
+                           .container p{
+                              font-size: 1.3rem;
+                           } 
+                
+                           .premium-banner .container .btn{
+                            font-size: 1.4rem;
+                            padding: 0.3em 0.3em;
+                           }
+                           
+                            }
+                    
+        
+    
+    
+    
+    
+    
+    
+    
+     */

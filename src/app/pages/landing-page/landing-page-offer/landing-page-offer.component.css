@@ -1,0 +1,34 @@
+
+/* offer component */
+
+.offer-paragraph{
+    font-size: 1.5rem;
+    color:white;
+    /* font-family: 'OpenSans', 'Arial', 'Helvetica'; */
+padding-top: 3%;
+    font-weight: 300;
+}
+.offer-background-color{
+    background-color: rgb(238, 104, 26);
+    padding-bottom: 3%;
+
+}
+
+.steps-button{
+    border-radius: 10px;
+    border: 1px solid transparent;
+    /* padding:7%; */
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    text-align: center;
+    text-shadow: 0px 1px 2px rgba(5, 5, 5, 0.3);
+
+    font-size: 18px;
+    color: #fff;
+    background-color: #F29E32CC;
+    cursor: pointer;
+
+
+}
+.steps-button:hover{
+    background-color: rgba(253, 167, 81, 0.795);
+}

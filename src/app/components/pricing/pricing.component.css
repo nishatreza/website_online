@@ -1,0 +1,121 @@
+.box {
+    width: 200px; height: 300px;
+    position: relative;
+    border: 1px solid #BBB;
+    background: #EEE;
+  }
+  .ribbon {
+    position: absolute;
+    right: -5px; top: -5px;
+    z-index: 1;
+    overflow: hidden;
+    width: 75px; height: 75px;
+    text-align: right;
+  }
+  .ribbon span {
+    font-size: .5rem;
+    font-weight: bold;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 20px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    width: 100px;
+    display: block;
+    background: #006DF0;
+    background: linear-gradient(#006DF0 0%, #006DF0 100%);
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 19px; right: -21px;
+  }
+  .ribbon-premium span{
+    
+    background: linear-gradient(rgb(240, 108, 0) 0%, rgb(240, 16, 0) 100%);
+  }
+
+  td{
+    color: white;
+  }
+  .ribbon span::before {
+    content: "";
+    position: absolute; left: 0px; top: 100%;
+    z-index: -1;
+    border-left: 3px solid #006DF0;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid #006DF0;
+  }
+  .ribbon span::after {
+    content: "";
+    position: absolute; right: 0px; top: 100%;
+    z-index: -1;
+    border-left: 3px solid transparent;
+    border-right: 3px solid #006DF0;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid #006DF0;
+  }
+  .main-atribute{
+      text-decoration: none;
+  }
+  .card-text{
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1%;
+  }
+  .card-text2{
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2%;
+  }
+  .price{
+    color: #1bcc87;
+    font-size: 1.625rem;
+    font-weight: bold;
+    padding: 1%;
+  }
+  .month{
+      color: #333;
+  }
+  .pricing-button{
+      padding: 2%;
+      margin: 2%;
+   
+      background-color: #286EBB;
+      font-weight: bold;
+  }
+  .parent{
+
+  }
+  .table-responsive{
+    display: table;
+  }
+  .usd{
+    font-size: .86rem;
+    color: #999;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1%;
+  }
+  .includes{
+    font-size: .76rem;
+
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .table-title{
+      color: white;
+  }
+  .table-row{
+      color: white;
+  }
+  .table-responsive {
+    display: table;
+}
+  .table{
+    /* overflow-x: hidden; */
+  }

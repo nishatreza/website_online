@@ -1,0 +1,24 @@
+.bg-dark{
+    /* background-color: transparent !important; */
+}
+.navbar .navbar-toggler {
+
+    z-index: 1;
+}
+
+@media (max-width: 583px) {
+    .navbar-brand{
+   width: 50%;
+
+   
+    position: relative;
+    right: 100px;
+    z-index: 0;
+
+    }
+}
+@media (max-width: 767px) {
+    .bg-dark{
+        background-color:#343A40 !important;
+    }
+}

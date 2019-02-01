@@ -1,0 +1,41 @@
+
+
+   /* video */
+
+   .video-heading-text{
+    font-size: 30px;
+    /* font-family: 'OpenSans', Arial; */
+    font-weight: 500;
+
+
+   }
+
+   .video-container{
+    max-width: 100%;
+     width: 100%;
+     background-color: #5FAFEA;
+     padding-top: 3%;
+   padding-bottom: 3%;
+   }
+   .video-area{
+    max-width: 960px;
+    margin: 0 auto;
+   }
+
+   .founder-text{
+    text-transform: none;
+    font-size: 15px;
+
+   }
+   .founder-text a{
+    color: #fff;
+
+   }
+   .customer-text{
+    margin-top: 30px;
+   }
+   .customer-text a{
+    color: #fff;
+     text-transform: uppercase;
+      font-weight: 700;
+   }

@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1');
+.my-projects{
+    background-color: #1A1A1A;
+    padding-bottom: 8%;
+    font-family: "Open Sans","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif !important;
+
+}
+
+/*pagination*/
+/* .pagination-controls /deep/ .my-pagination li.previousText{
+content: "<<";
+} */
+  .my-pagination /deep/ .ngx-pagination .disabled {
+    color: slategrey;
+    
+  }
+
+    .my-pagination /deep/ .ngx-pagination{
+      font-size: 17px;
+      margin-top: 4%;
+      margin-left: 10%;
+    }
+   
+.service-cards{
+height: 100%;
+
+}
+.add-margin{
+margin-top:2%;
+}
+.card{
+    background-color: #262626;
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75);
+}
+#backlog-btn{
+    background-color: #262626 !important;
+
+}
+
+
+.projects-card{
+    padding: 2%;
+}
+
+
+
+/*prannto code--card*/
+.card{
+/* margin-top: 5%; */
+/* cursor: pointer; */
+color:#fff;
+/* font-family: 'Gothic A1', sans-serif; */
+}
+
+.carousel slide{
+  width:100%;
+  
+}
+
+.carousel-item img{
+height: auto;
+width: auto;
+}
+.freelancer-info{
+  
+  padding-top: 10px;
+}
+.freelancer-image{
+  overflow: hidden;
+}
+.freelancer-image img{
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.work-info{
+  padding-top: 10px;
+ 
+}
+.work-info h5{
+    white-space: nowrap;
+    display: inline-block;
+    text-align: left;
+    padding: 0;
+    font-size: 	0.875em;
+    text-transform: capitalize !important;
+  
+}
+.work-info p{
+  color: #29B6F6;
+  font-size:0.813em;
+
+}
+.seller-ratings{
+  padding-top: 3px;
+  display: flex;
+}
+.rating-icon{
+  color: #FFC100;
+  font-size: 0.688em;
+}
+.rating-value{
+  color: #FFC100;
+  font-size: 0.688em;
+  padding-left: 2px;
+  font-weight: bold;
+}
+.people-rated{
+  color:#E0E0E0;
+  font-size: 11px;
+  display: inline;
+  padding-left: 2px;
+}
+.card-body{
+    width: 100%;
+    padding: 0;
+}
+.gig-price{
+    width: 100%;
+    border-top: 1px solid #424242;
+   margin-top: 5px;
+   padding: 0px 15px;
+}
+.edit-icon{
+padding:8px 0;
+color: #00BCD4;
+font-size: 0.750em;
+position: relative;
+float: left;
+}
+.deleteIcon{
+    padding-top:25px ;
+    color:red;
+    font-size: 1em;
+    position: relative;
+     /* float: right; */
+     margin-left:205px;
+    }  
+
+.tooltiptext{
+  visibility: hidden;width: 120px;
+  background-color:rgba(33,33,33 ,0.9);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 70%;
+  left: 50%;
+  margin-left: -60px;
+  font-size:12px;
+  text-transform: capitalize;
+}
+.freelancer-info{
+      
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.freelancer-name{
+    display: flex;
+}
+.freelancer-image{
+    overflow: hidden;
+}
+.freelancer-image img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.name-area{
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    margin-left: 10px;
+    overflow: hidden;
+    
+}
+
+.name-area h4{
+    font-size: 13px;
+    text-transform: none;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    
+    
+}
+.my-pagination /deep/ .ngx-pagination a {
+    
+    color: slategrey;
+    display: block;
+    padding: 0.1875rem 0.625rem;
+    border-radius: 0;
+  }
+  .my-pagination /deep/ .ngx-pagination a:hover {
+    
+    background-color:silver;
+    
+  }
+.tooltiptextDelete{
+    visibility: hidden;width: 120px;
+    background-color:rgba(33,33,33 ,0.9);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 50%;
+    left: 40%;
+    margin-left: -60px;
+    font-size:12px;
+    text-transform: capitalize;
+  }
+.edit-icon .tooltiptext::after{
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #424242 transparent transparent transparent;
+}
+.edit-icon:hover .tooltiptext {
+  visibility: visible;
+}
+.deleteIcon .tooltiptextDelete::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #424242 transparent transparent transparent;
+  }
+  .deleteIcon:hover .tooltiptextDelete {
+    visibility: visible;
+  }
+.price-text{
+  float:right;
+  overflow: hidden;
+ padding: 5px 0;
+ 
+}
+.price-text h5{
+  font-size:0.813em !important;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0;
+  color: gray;
+  padding: 0;
+  display: inline;
+}
+.price-text p{
+  font-size: 0.938em;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0;
+  color: #4DD0E1;
+  padding: 0;
+  display: inline;
+  white-space: nowrap;
+ }
+
+/*modal card*/
+.launch-service-modal .card-body{
+   padding: 100px 0px;
+   font-family: 'Gothic A1', sans-serif;
+
+}
+.launch-service-modal .card-body h5{
+    display: inline-block;
+    text-align: center;
+    font-size: 1.125em;
+    text-transform: capitalize;
+    color: #4DD0E1;
+}
+.card-icon{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: #00BCD4;
+     
+}
+
+
+/*responsive
+@media all and (min-width:500px) and (max-width:1000px){
+.work-info h5,p{
+    font-size: 0.688em;
+}
+
+.price-text{
+    float:unset;
+    text-align: left;
+    display: block;
+    margin-left: 0;
+
+}
+.price-text h5,p{
+    font-size: 0.750em;
+    display: block;
+    text-align: left;
+    white-space: wrap;
+}
+.edit-icon{
+    font-size: 0.750em;
+    float:unset;
+    display: block;
+}
+.card{
+    width: 100%;
+}
+}
+*/
+/*pranto code ends*/
+.createGig .card{
+    cursor:pointer;
+    min-height:365px;
+}
+.createGig .card-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.createGig .btnText{
+    text-align: center;
+    font-size: 1em;
+    text-transform: capitalize;
+    color: #4DD0E1;
+}
+@media all and (min-width:576px) and (max-width:1199px){
+    .createGig .card{
+        cursor:pointer;
+        min-height:335px;
+    }
+    .card{
+        min-height:335px;
+    }
+}

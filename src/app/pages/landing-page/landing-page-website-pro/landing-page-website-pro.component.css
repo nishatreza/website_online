@@ -1,0 +1,40 @@
+.pro{
+   
+    background-color: #353537;
+    
+}
+
+.itemtext{
+    padding-top: 10%;
+    
+}
+.pro-headingtext{
+   font-size: 1.8rem;
+   font-weight: 600;
+   font-family: hco gotham ssm,helvetica neue,Helvetica,Arial,sans-serif;
+}
+.itemtext p{
+    font-size: .8rem;
+    
+    line-height: 22px;
+    
+    color: #fff;
+    
+    margin-bottom: 40px;
+}
+.btn-green{
+    font-size: 14px;
+    line-height: 120%;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    transition: background-color .3s,border .2s;
+    padding: 9px 20px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.btn-green:hover{
+    background-color: #2572C7;
+    border: 1px solid #2572C7;
+}
+

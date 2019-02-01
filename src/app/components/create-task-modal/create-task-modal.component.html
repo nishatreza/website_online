@@ -1,0 +1,74 @@
+<div>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change Request </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form (ngSubmit)="changeRequest(changeRequestForm)" [formGroup]="changeRequestForm">
+      <div class="modal-body">
+
+            <div class="form-group">
+                <label for="project">Select Project</label>
+                <select class="form-control form-control-sm" id="project" formControlName="project">
+                  <option>Apptron Consulting LLC</option>
+                  <option>Devsearch</option>
+                  <option>Websiteonline.net</option>
+                  <option>Lax Tacos</option>
+                  <option>Instant Print Inc</option>
+                </select>
+              </div>
+              <div class="form-group">
+                  <label for="ticket">Change Request Type</label>
+                  <select class="form-control form-control-sm" id="requestType" formControlName="requestType">
+                    <option>New Feature</option>
+                    <option>Task</option>
+                    <option>Bug</option>
+                </select>
+                </div>
+          <div class="form-group">
+            <label for="summary" class="form-control-label"> Summary:</label>
+            <input type="text" class="form-control" id="summary" formControlName="summary">
+          </div>
+          <div class="form-group">
+            <label for="description" class="form-control-label"> Description:</label>
+            <textarea class="form-control" id="description" formControlName="description"></textarea>
+          </div>
+          <div class="form-group">
+              <label for="priority">Priority </label>
+              <select class="form-control form-control-sm" id="priority" formControlName="priority">
+                <option> High </option>
+                <option> Medium</option>
+                <option> Low</option>
+                
+              </select>
+            </div>
+          <div class="form-group">
+              <label for="assignee">Assignee </label>
+              <select class="form-control form-control-sm" id="assignee" formControlName="assignee">
+                <option>Nishat reza </option>
+                <option>Mehtaz Borsha</option>
+               
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="status">Status </label>
+                <select class="form-control form-control-sm" id="status" formControlName="status">
+                  <option>To do  </option>
+                  <option>In-progress</option>
+                  <option>Done</option>
+              </select>
+              </div>
+      
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!changeRequestForm.valid">Create</button>
+        </div>
+    </form>
+    
+    </div>
+  </div>
+</div>

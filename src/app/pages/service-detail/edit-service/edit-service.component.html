@@ -1,0 +1,286 @@
+<section class="createService">
+    <div  id="updateService" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog empModal" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" (click)="close()">&times;</button>
+                <h4 class="modal-title">Update Service</h4>
+              </div>
+              <div class="modal-body">
+  <div class="container" *ngIf="pageData" >
+
+    <div class="title">
+      Edit Service
+    </div>
+    <form [formGroup]="serviceForm" (ngSubmit)="onSubmit(serviceForm.value)">
+      <input type="hidden" class="form-control" formControlName="email" id="email"[ngModel]="pageData.email" value="[ngModel]">
+      <input type="hidden" class="form-control" formControlName="serviceId" id="serviceId" [ngModel]="pageData.serviceId" value="[ngModel]">
+      <div class="row">
+        <div class="col-lg-2 col-sm-2 col-md-2"></div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="form-group">
+
+            <label for="categories">Service Category :</label>
+
+          <select  class="form-control" formControlName="categories" (ngModelChange)="firstDropDownChanged($event)"
+            [ngModel]="pageData.categories" value="[ngModel]">
+              <option *ngFor="let d of categories" [ngValue]="d">{{ d }}</option>
+            </select> 
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="form-group">
+            <label for="categoryTypes" class="central-block">Service Category Types :</label>
+            <select [ngModel]="pageData.categoryTypes" value="[ngModel]" class="form-control" formControlName="categoryTypes" 
+              (ngModelChange)="secondDropDownChanged($event)" >
+              <option *ngFor="let v of categoryTypes" [ngValue]="v">{{ v }}</option>
+            </select>
+          </div> 
+        </div>
+        <input type="hidden" class="form-control" formControlName="url" id="url" [ngModel]="url" value="[ngModel]">
+
+        <div class="col-lg-2 col-sm-2 col-md-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="form-group">
+            <label for="name">Service Name :</label>
+            <input class="form-control" formControlName="name" id="name"  [ngModel]="pageData.name" value="[ngModel]">
+
+            
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+
+      </div>
+ 
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="form-group">
+            <label for="serviceDescription" class="central-block">Service Description :</label>
+            <textarea class="form-control" id="descriptionOne" rows="2" formControlName="serviceDescription" [ngModel]="pageData.serviceDescription" value="[ngModel]"></textarea>
+            
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="form-group">
+            <label for="file">Upload Service Images</label>
+
+
+            <div class="upload-file" dropZone (hovered)="toggleHover($event)" (dropped)="startUpload($event)" [class.hovering]="isHovering">
+              <div class="file-icons">
+                <i class="fas fa-file-pdf" data-fa-transform="rotate-322" style="margin-right:12px;"></i>
+                <i class="fas fa-file-image" style="margin-bottom:5px;"></i>
+                <i class="fas fa-file" data-fa-transform="rotate-25" style="margin-left:12px;"></i>
+              </div>
+              <div class="upload-icon" draggable="true" ngClass="{{dragAreaClass}}">
+                <div class="row">
+                  <div class="col-xs-12  col-md-12  col-lg-12 ">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <div class="shadow"></div>
+                    <label class="center-block">
+                      <p>Drag and drop or
+
+                      </p>
+                    </label>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <span class="file-label">
+                choose a file…
+              </span>
+
+              <input class="form-control" formControlName="image" id="file-cta" type="file" (change)="startUpload($event.target.files)">
+
+            </div>
+            <div *ngIf="percentage | async as pct">
+              <progress class="progress is-info" [value]="pct" max="100">
+              </progress>
+              <small>{{ pct | number }}%</small>
+
+
+            </div>
+            <div *ngIf="snapshot | async as snap">
+              <small>{{ snap.bytesTransferred | fileSize }} of {{ snap.totalBytes | fileSize }}</small>
+              <div *ngIf="downloadURL | async as url">
+                <small class="upload-success">Successfully uploaded images.</small>
+
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Basic Package</h4>
+              <div class="card-text">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="cost"> Service Cost :
+                        <input class="form-control" formControlName="basicCost"[ngModel]="pageData.basicCost" value="[ngModel]">
+                      </label>
+                      
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="basicDeliveryTime"> Average Delivery Time :
+                         <select id="basicDeliveryTime" class="form-control" formControlName="basicDeliveryTime" [ngModel]="pageData.basicDeliveryTime" value="[ngModel]">
+                          <option *ngFor="let d of times" [ngValue]="d">{{ d }}</option>   
+                           <!-- <option value="24hrs">Upto 24 Hours</option>
+                          <option value="3days">Upto 3 Days</option>
+                          <option value="7days">Upto 7 Days</option>
+                          <option value="Any">Any</option> -->
+                         </select> 
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <label for="basicDescription" class="central-block">About the Package :</label>
+                      <textarea class="form-control" id="basicDescription" rows="1" formControlName="basicDescription"[ngModel]="pageData.basicDescription" value="[ngModel]"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Standard Package</h4>
+              <div class="card-text">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="standardCost"> Service Cost :
+                        <input class="form-control" formControlName="standardCost"[ngModel]="pageData.standardCost" value="[ngModel]">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="standardDeliveryTime"> Average Delivery Time :
+                         <select id="standardDeliveryTime" class="form-control" formControlName="standardDeliveryTime"[ngModel]="pageData.standardDeliveryTime" value="[ngModel]"> -->
+                           <option *ngFor="let d of times" [ngValue]="d">{{ d }}</option> 
+                          <!-- <option value="24hrs">Upto 24 Hours</option>
+                          <option value="3days">Upto 3 Days</option>
+                          <option value="7days">Upto 7 Days</option>
+                          <option value="Any">Any</option> -->
+                        </select> 
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <label for="standardDescription" class="central-block">About the Package :</label>
+                      <textarea class="form-control" id="standardDescription" rows="1" formControlName="standardDescription"[ngModel]="pageData.standardDescription" value="[ngModel]"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Premium Package</h4>
+              <div class="card-text">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="premiumCost"> Service Cost :
+                        <input class="form-control" formControlName="premiumCost"[ngModel]="pageData.premiumCost" value="[ngModel]">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="form-group">
+                      <label for="premiumDeliveryTime"> Average Delivery Time :
+                        <select id="premiumDeliveryTime" class="form-control" formControlName="premiumDeliveryTime"[ngModel]="pageData.premiumDeliveryTime" value="[ngModel]"> 
+                           <option *ngFor="let d of times" [ngValue]="d">{{ d }}</option>  
+                          <!-- <option value="24hrs">Upto 24 Hours</option>
+                          <option value="3days">Upto 3 Days</option>
+                          <option value="7days">Upto 7 Days</option>
+                          <option value="Any">Any</option> -->
+                        </select> 
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                      <label for="premiumDescription" class="central-block">About the Package :</label>
+                      <textarea class="form-control" id="premiumDescription" rows="1" formControlName="premiumDescription"[ngModel]="pageData.premiumDescription" value="[ngModel]"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"></div>
+      </div>
+
+
+      <div class="btn-group" style="margin-top:10px">
+
+        <button type="submit" class="btn btn-primary btnsbmt" >Create</button>
+
+      </div>
+
+
+    </form>
+
+    <!-- done by shreya khisa 2018 -->
+
+
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  
+</section>

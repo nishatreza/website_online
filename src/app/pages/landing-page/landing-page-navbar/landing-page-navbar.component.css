@@ -1,0 +1,113 @@
+/* .landing-page-row{
+    height: 100vh;
+    background-image:linear-gradient(to right bottom, #7ed56fde, #55c57ad3), url('http://geekwebdesigns.com/wp-content/uploads/2016/08/Watch-Your-Website-Visitors.jpg');
+
+
+} */
+
+.col-center{
+    /*float: left;*/
+    margin: 0 auto;
+  }
+  
+  .bg-custom{
+      /* background-color: #2572C7 !important; */
+      background-color: transparent !important;
+      /* margin-bottom: -104px; 
+      z-index: 1;  */
+  }
+  
+  
+
+nav #navlinks{
+    /* z-index: 999; */
+    color: white !important;
+
+    font-size: .8rem;
+    font-weight: 400;
+
+    font-family: Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    text-transform: uppercase;
+}
+nav #navlinks:hover{
+    color: rgb(196, 183, 183) !important;
+
+}
+
+
+
+/* prac */
+.bg-custom {
+    position: relative;
+
+}
+
+
+nav{
+/* width: 100vw; */
+overflow: hidden;
+
+
+}
+
+
+
+
+
+@media (max-width: 326px) {
+    .navbar-brand{
+        position: relative;
+        left: -80px;
+    z-index: 0;
+    }
+}
+@media (max-width: 320px) {
+    .navbar-brand{
+        position: relative;
+        left: -90px;
+    z-index: 0;
+    }
+}
+
+/* end prac */
+.navbar >li >a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.form-inline .form-control{
+    transition: .4s;
+    color: #333;
+    border: none;
+    border-radius: 100px;
+    background-color: #fafafa;
+    padding: 5px 16px;
+    margin-left: 8px;
+    width: 180px;
+    max-width: 240px;
+    height: 80%;
+    font-size: .7rem;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.navbar-brand{
+    position: relative;
+    left: -70px;
+z-index: 0;
+}
+
+.navbar .navbar-toggler {
+    padding: 10px;
+    margin: 25px 15px 25px 0;
+
+    z-index: 1;
+}
+.navbar .navbar-toggler .navbar-toggler-icon {
+
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.3)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+
+
+
+

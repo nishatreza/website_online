@@ -1,0 +1,39 @@
+/* done by Shreya Khisa 2018 */
+
+.listContainer{
+    background-color: white;
+    line-height: 130%;
+}
+
+.listContainer h3{
+    padding: 0 20px 0px 0; 
+    font-size: 15px;
+    color: #0e0e0f;
+    position:relative;
+    
+    text-transform: capitalize !important;
+   
+}
+
+.listing li {
+ 
+    color: #777;
+    font: 12px/120% "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:15px;
+    padding: 0 20px 10px 0; 
+    
+} 
+
+.listing li a{
+    color: #777;
+}
+
+@media(max-width:1199px)
+{
+.listContainer{
+    display: none;
+
+}
+}
+
+/* done by Shreya khisa 2018 */

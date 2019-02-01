@@ -1,0 +1,31 @@
+.Full-license-header h3{
+    font-family: "Open Sans","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif;
+    line-height: 1.25;
+ color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+    text-align: center;
+    padding: 5px;
+
+
+}
+img{
+    width: 96px;
+    height: 96px;
+    display: block;
+    margin: auto;
+}
+
+.Full-license-paragraph p{
+    font-family: "Open Sans","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif;
+    color: white !important;
+
+
+text-align: center;
+    color: #333;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+}

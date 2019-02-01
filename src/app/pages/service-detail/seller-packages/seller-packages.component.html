@@ -1,0 +1,140 @@
+<!--coded by pranto 1st september 2018-->
+<section class="packages-section">
+  <h3 class="section-header">Available Packages</h3>
+  <div class="container">
+    <div class="row" *ngIf="pageData">
+      <!--basic package-->
+      <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="package-card">
+          <div class="basic-header heading card-heading">
+            <div class="package-name">
+              Basic
+            </div>
+            <div class="cost">
+               {{pageData.basicCost || "N/A"}} Tk.
+            </div>
+          </div>
+          <div class="package-description">
+            <div class="package-price">
+              <i class="fas fa-money-bill-alt" data-fa-transform="rotate-12" style="margin-right: 2%;margin-top: 1.4%;"></i>
+              <strong>Package Price:</strong>
+              <p>Tk.{{pageData.basicCost || "N/A"}}</p>
+            </div>
+            <div class="delivery-time">
+              <i class="fas fa-clock" style="margin-right: 2%;margin-top: 1.4%;"></i>
+              <strong>Delivery Time:</strong>
+              <p>{{pageData.basicDeliveryTime || "This information is not available yet"}}</p>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <div class="avail-button" *ngIf="pageData.basicCost&&pageData.basicDeliveryTime&&pageData.basicDescription">
+              <button type="btn btn-primary" class="avail-b">Avail this package</button>
+            </div>
+            <div class="see-more" *ngIf="pageData.basicDescription">
+              <button type="btn btn-primary" class="see-b" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div id="collapseExample" [ngbCollapse]="isCollapsed" class="show-desc basic">
+            <div class="card desc-card">
+              <h4 class="description">Package Details:</h4>
+              <div class="card-body">
+                 {{pageData.basicDescription || "This information is not available yet"}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--standard package-->
+      <div class="col-md-12 col-lg-12 col-sm-12"*ngIf="pageData.standardCost && pageData.standardDeliveryTime && pageData.standardDescription">
+        <div class="package-card">
+          <div class="standard-header heading card-heading">
+            <div class="package-name">
+             Standard
+            </div>
+            <div class="cost">
+              {{pageData.standardCost || "N/A"}}Tk
+            </div>
+          </div>
+          <div class="package-description">
+            <div class="package-price">
+              <i class="fas fa-money-bill-alt" data-fa-transform="rotate-12" style="margin-right: 2%;margin-top: 1.4%;"></i>
+              <strong>Package Price:</strong>
+              <p>{{pageData.standardCost || "N/A"}} Tk.</p>
+            </div>
+            <div class="delivery-time">
+              <i class="fas fa-clock" style="margin-right: 2%;margin-top: 1.4%;"></i>
+              <strong>Delivery Time:</strong>
+              <p>{{pageData.standardDeliveryTime || "This information is not available yet"}}</p>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <div class="avail-button" *ngIf="pageData.standardCost && pageData.standardDeliveryTime && pageData.standardDescription">
+              <button type="btn btn-primary" class="avail-s">Avail this package</button>
+            </div>
+            <div class="see-more" *ngIf="pageData.standardDescription">
+              <button type="btn btn-primary" class="see-s" (click)="isCollapsedTwo = !isCollapsedTwo" [attr.aria-expanded]="!isCollapsedTwo" aria-controls="collapseExampletwo">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div id="collapseExampletwo" [ngbCollapse]="isCollapsedTwo" class="show-desc2">
+            <div class="card desc-card">
+              <h4 class="description">Package Details</h4>
+              <div class="card-body">
+                {{pageData.standardDescription || "This information is not available yet"}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--premium package-->
+      <div class="col-md-12 col-lg-12 col-sm-12" *ngIf="pageData.premiumCost && pageData.premiumDeliveryTime && pageData.premiumDescription">
+        <div class="package-card">
+          <div class="premium-header heading card-heading">
+            <div class="package-name">
+              Premium
+            </div>
+            <div class="cost">
+              Tk.{{pageData.premiumCost || "N/A"}}
+            </div>
+          </div>
+          <div class="package-description">
+            <div class="package-price">
+              <i class="fas fa-money-bill-alt" data-fa-transform="rotate-12" style="margin-right: 2%;margin-top: 1.4%;"></i>
+              <strong>Package Price:</strong>
+              <p>{{pageData.premiumCost || "N/A"}} Tk.</p>
+            </div>
+            <div class="delivery-time">
+              <i class="fas fa-clock" style="margin-right: 2%;margin-top: 1.4%;"></i>
+              <strong>Delivery Time:</strong>
+              <p>{{pageData.premiumDeliveryTime || "This information is not available yet"}}</p>
+            </div>
+          </div>
+          <div class="card-bottom">
+            <div class="avail-button">
+              <button type="btn btn-primary" class="avail-p">Avail this package</button>
+            </div>
+            <div class="see-more" *ngIf="pageData.premiumDescription">
+              <button type="btn btn-primary" class="see-p" (click)="isCollapsedThree = !isCollapsedThree" [attr.aria-expanded]="!isCollapsedThree" aria-controls="collapseExamplethree">
+                Learn More
+              </button>
+            </div>
+          </div>
+          <div id="collapseExamplethree" [ngbCollapse]="isCollapsedThree" class="show-desc3">
+            <div class="card desc-card">
+              <h4 class="description">Package Details</h4>
+              <div class="card-body">
+               {{pageData.premiumDescription || "This information is not available yet"}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

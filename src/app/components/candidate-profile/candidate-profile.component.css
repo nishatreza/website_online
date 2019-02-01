@@ -1,0 +1,271 @@
+.profile-middle{
+    background-color: white;
+    padding-bottom: 3%;
+    padding-top: 3%;
+
+}
+
+
+.profile-image{
+
+    filter:drop-shadow(8px 8px 10px black);
+
+}
+.card-header{
+    background-color: #2196F3;
+}
+
+.card-header h4{
+    font-family: Poppins,sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+  word-wrap: break-word;
+    color: #c7e6ff;
+}
+.card-header h4 > span{
+    color: white;
+}
+
+.card-text{
+    font-size: 1.0rem;
+    font-family: Muli,sans-serif;
+    color: #848484;
+    font-weight: 400;
+}
+
+.profile-div{
+
+   
+    padding-top: 2rem;
+ 
+
+}
+#btn-save-changes{
+    cursor: pointer;
+}
+
+.username{
+    text-align: center !important;
+    margin: auto;
+    padding-top: 1rem;
+ display: inline-block;
+ padding-bottom: 1rem;
+cursor: pointer;
+color: black !important;
+}
+
+.user-card{
+
+    margin-bottom: 1rem;
+ width: 100%;
+}
+.user-card .card{
+   
+    background-color: #ece9e9;
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75);
+}
+.links{
+    background-color: #ece9e9;
+   
+
+}
+.links .user-link{
+    color: white;
+}
+.links .user-link:hover{
+    color: orangered;
+}
+
+.links > a{
+    padding-left: 2%;
+max-width: 100%;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+word-wrap: normal;
+display: block;
+text-decoration: none;
+color: #a6a9ac;
+font-size: .9rem;
+
+}
+
+.links > a:hover{
+    color: #333;
+}
+
+/* 
+.form-inner{
+
+    padding: 4rem 1rem 4rem 1rem;
+
+
+}
+
+.form-inner-another{
+    padding: 0rem 1rem 1rem 1rem;
+    position: relative;
+
+}
+
+.form-inner-another-last{
+    padding: 6rem 1rem 1rem 1rem;
+
+} */
+
+.card-footer .btn-file {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: white;
+}
+.card-footer .btn-file:hover{
+    background-color: #E0E0E0;
+}
+
+
+.card-footer .btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+
+.next-card{
+   margin-bottom: 1rem;
+background-color: white;
+box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.75);
+}
+.btn-close-div{
+    padding: 1rem;
+
+}
+
+::-webkit-input-placeholder {
+    font-size: 0.8rem;
+ }
+ 
+ :-moz-placeholder { 
+       font-size: 0.8rem;
+ }
+ 
+ ::-moz-placeholder {  
+       font-size: 0.8rem;
+ }
+ 
+ :-ms-input-placeholder {
+       font-size: 0.8rem;
+ }
+
+
+ .form-control:focus {
+    border-color:#2196F3;
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.075), 0 0 11px rgba(4, 6, 29, 0.918);
+    outline: 0 none;
+  }
+
+#btn-close{
+    color: #F05F5C;
+    background-color: #F5F8F9;
+    border: none;
+}
+
+.btn-save-div{
+
+    padding: 3rem 1rem 1rem 4rem;
+}
+
+#account-text, #personal-text, #social-text{
+    font-size: 1rem;
+    font-family: "Open Sans","Helvetica Neue","Helvetica","Roboto","Arial",sans-serif;
+    line-height: 1.25;
+    text-rendering: optimizeLegibility;
+    color: #504948;
+
+}
+
+.form-social span{
+	position: absolute;
+
+	height: 25px;
+	display: flex;
+    align-items: center;
+    background-color: #f5f8f9;
+    border-radius: 3px 0 0 3px;
+    box-shadow: inset 0 0px 1px #222;
+    padding: 1rem 1rem 1.23rem 1rem;
+
+}
+
+.form-social span .fab{
+    padding-top: 1rem;
+    
+}
+
+.form-social input{
+    padding-left: 3.5rem;
+
+
+}
+
+
+.form-social .fa-skype{
+    color: #22B8CF;
+    
+    
+}
+
+
+
+
+
+/* 
+ .form-inner-another::-webkit-input-placeholder {
+     font-size: 4px;
+     line-height: 3;
+ } */
+
+.form-inner-another-last span{
+	position: absolute;
+
+	height: 25px;
+	display: flex;
+    align-items: center;
+    background-color: #f5f8f9;
+    border-radius: 3px 0 0 3px;
+    box-shadow: inset 0 0px 1px #222;
+    padding: 1rem 1rem 2rem 1rem;
+
+}
+
+.form-inner-another-last span .fa{
+    padding-top: 1rem;
+    
+}
+
+.form-inner-another-last input{
+    padding-left: 3.5rem;
+ /* height: 20px; */
+
+}
+/* 
+@media (max-width: 330px) {
+ .card{
+     width: 100%;
+     margin: auto;
+ }
+} */
+
+
+
+

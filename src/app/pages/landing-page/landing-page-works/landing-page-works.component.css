@@ -1,0 +1,18 @@
+.background{
+    background-color: white;
+}
+.works-text{
+    text-align: center !important;
+    color: black;
+}
+.header-works{
+    color: black;
+    font-size: 18px;
+}
+.works-paragraph{
+    color: #222;
+    font-size: 14px;
+    text-align: center; 
+    line-height: 22px;
+    font-weight: 300;
+}

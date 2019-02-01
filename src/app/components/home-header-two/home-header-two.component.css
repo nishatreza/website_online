@@ -1,0 +1,67 @@
+/* .header {
+    height: 95vh;
+    background-image:linear-gradient(to right bottom, #7ed56fde, #55c57ad3), url('http://geekwebdesigns.com/wp-content/uploads/2016/08/Watch-Your-Website-Visitors.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    position: relative;
+} */
+
+
+/* .company-name{
+    padding-top: 5%;
+   
+  
+    text-shadow: 2px 2px 2px rgba(2, 2, 2, 1);
+
+    color: white;
+    letter-spacing: 27px;
+    font-weight: bold;
+    
+} */
+/* 
+.company-mission{
+    text-shadow: 2px 2px 2px rgba(2, 2, 2, 1);
+   
+    padding: 0 36px;
+   color: #B67C10;
+} */
+
+/* .header-title-container{
+    padding: 3%;
+} */
+
+.home-header{
+    /* height: 95vh; */
+    background-image:linear-gradient(to right bottom, #7ed56fde, #55c57ad3), url('http://geekwebdesigns.com/wp-content/uploads/2016/08/Watch-Your-Website-Visitors.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%) ;
+height: 100vh;
+/* padding-bottom: 24%; */
+}
+
+.head-wrap{
+    /* padding-top: 10%; */
+    /* padding-bottom: 27%; */
+}
+
+
+
+@keyframes moveinleft {
+    
+        0% {
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+    
+        }
+    
+    }

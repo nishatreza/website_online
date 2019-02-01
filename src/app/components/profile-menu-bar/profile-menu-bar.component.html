@@ -1,0 +1,84 @@
+<section class="profile-main">
+
+
+    <div class="container">
+
+
+
+        <ul class="profile-menu" id="profile-menu">
+            <li>
+                <a [routerLink]="['/profile']" [routerLinkActive]="['active']">
+                    <i class="fa fa-user"></i>
+                    <span title="Profile" value="Profile">Profile
+
+                    </span>
+                </a>
+            </li>
+            <li>
+                <!-- <a [routerLink]="['/my-projects']" [routerLinkActive]="['active']"> -->
+                <a [routerLink]="['/services']" [routerLinkActive]="['active']">
+                    
+                    <i class="fas fa-tasks"></i>
+                    <span>
+                        <!-- Projects -->
+                      Services
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a [routerLink]="['/profile-my-favorites']" [routerLinkActive]="['active']">
+                    <i class="fa fa-heart"></i>
+                    <span>
+                      
+                        Favorites
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a [routerLink]="['/profile-following']" [routerLinkActive]="['active']">
+                    <i class="fa fa-users"></i>
+                    <span>
+                        Following
+                       
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a [routerLink]="['/profile-downloads']" [routerLinkActive]="['active']">
+                    <i class="fas fa-upload"></i>
+                    <span>
+                        Uploads
+                       
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a [routerLink]="['/profile-subscriptions']" [routerLinkActive]="['active']">
+                    <i class="fa fa-archive"></i>
+                    <span>
+                        Subscriptions
+                      
+
+                    </span>
+                </a>
+            </li>
+
+            <li>
+                <a [routerLink]="['/profile-support']" [routerLinkActive]="['active']">
+                    <i class="fa fa-life-ring"></i>
+                    <span>
+                        Support
+                
+                    </span>
+                </a>
+            </li>
+      
+
+        </ul>
+
+    </div>
+
+</section>

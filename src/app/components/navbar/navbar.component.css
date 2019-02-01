@@ -1,0 +1,83 @@
+
+
+
+#navbarbrand:hover {
+    color: #f05f40;
+    transition: all 0.3s ease;
+}
+
+#navlinks {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #8A9596;
+    font-size: .8rem;
+}
+
+#navlinks:hover {
+    color: #f05f40;
+    transition: all 0.3s ease;
+}
+
+.main-navbar {
+    position: relative;
+
+}
+
+.navbar-brand{
+    position: relative;
+    left: -70px;
+z-index: 0;
+}
+nav{
+/* width: 100vw; */
+overflow: hidden;
+
+}
+
+
+.navbar >li >a {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.navbar .navbar-toggler {
+    padding: 10px;
+    margin: 25px 15px 25px 0;
+   
+    z-index: 1;
+}
+
+
+@media (max-width: 326px) {
+    .navbar-brand{
+        position: relative;
+        left: -80px;
+    z-index: 0;
+    }
+}
+@media (max-width: 320px) {
+    .navbar-brand{
+        position: relative;
+        left: -90px;
+    z-index: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.bg-inverse {
+    background-color: #262626 !important;
+}
+.navbar .navbar-toggler .navbar-toggler-icon {
+
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.3)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }

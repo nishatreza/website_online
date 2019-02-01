@@ -1,0 +1,19 @@
+<section class="header">
+<div class="LogoDesign">
+  <div class="container-fluid" *ngIf="pageInfo" >
+      <div class="LogoDesignHeader" *ngFor="let service of pageInfo" >
+          <div class="LogoDesignTitle"  >
+          {{service.title}}
+          </div>
+          <div class="LogoDesignContent" >
+          {{service.subTitle}}
+                <br>
+             
+           </div>
+      </div>
+      <hr>
+  </div>
+  <hr>
+ </div> 
+
+</section>
